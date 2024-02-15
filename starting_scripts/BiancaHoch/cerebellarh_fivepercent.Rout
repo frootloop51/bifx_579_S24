@@ -1,0 +1,71 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ###########################################
+> #
+> # Read and Analyze Snaptron output files from the cerebellar hemisphere queries made by makeScriptsSnaptron.R.
+> #
+> ###########################################
+> rm(list=ls()) #Clear R memory
+> gc() #empty garbage collector
+         used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+Ncells 268998 14.4     689902 36.9         NA   478114 25.6
+Vcells 457178  3.5    8388608 64.0      16384  1940578 14.9
+> 
+> ###Set working directory:
+> setwd("/Users/biancahoch/Documents/snaptronwork/snapout/cerebellarh_gtex/")
+> 
+> #Update file path to point toward appropriate folder on the computer
+> cerebellarh_list <- list.files(pattern=".tsv") 
+> 
+> #Read files:
+> cerebellarh <- sapply(cerebellarh_list, read.delim, simplify = FALSE)
+> 
+> #Print only the rows in which the number of samples that have one or more reads covering the intron constitute atleast 5% of the total samples searched:
+> 
+> #First find the number of anterior cingulate cortex samples:
+> load("~/Documents/splice_project/data/analysis/cerebellarh_rail.Rdata")
+> cerebellarh_rail
+[1] "53964,53966,53979,54080,54245,53690,53699,53819,53861,53358,53375,53508,53534,53622,52870,58484,58506,58627,58649,58800,58955,59022,59106,54975,55120,57521,57551,57681,54307,54314,54358,54489,54516,54521,54533,54572,51418,51450,51451,51463,51515,50804,50834,50856,50958,57031,57048,57060,57067,57263,57351,57402,50424,50437,50482,50488,50499,50532,50635,50250,50287,50300,55931,55963,56018,52378,52457,52458,52492,52526,52623,52671,51904,58158,58175,58183,54758,54845,54854,57994,57995,58045,58086,58108,58109,59597,59228,59381,53003,53026,53170,52053,52071,52080,52085,52216,52301,55577,55594,55612,55719,55832,55856,55266,55339,56547,56556,56638,56760,56811,56819,51107,51109,51112,51122,51139,51278,56297"
+> splitcerebellarh <- strsplit(cerebellarh_rail, ",")
+> unlistsplitcerebellarh <- unlist(splitcerebellarh)
+> print(paste(length(unlistsplitcerebellarh)))
+[1] "118"
+> 
+> #See which junctions are present in atleast 5% of samples:
+> f <- function(df){
++   (df[which(df$samples_count >= length(unlistsplitcerebellarh) *.05), ])
++ }
+> 
+> #Apply function to list of dataframes:
+> dfList <- lapply( X=cerebellarh, FUN=f ) 
+> #Bind the lists into one dataframe:
+> allDF <-do.call(rbind,dfList) 
+> #Write the dataframe to a .csv:
+> write.csv(allDF, "~/Documents/snaptronwork/snapout_analysis/cerebellarh_fivepercent.csv")
+> #Check output:
+> #cerebellarh_fivepercent <- read.csv("~/Documents/snaptronwork/snapout_analysis/cerebellarh_fivepercent.csv", header = TRUE, sep = ",")
+> 
+> #############################################################
+> 
+> proc.time()
+   user  system elapsed 
+ 21.252   3.254  26.466 

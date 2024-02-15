@@ -1,0 +1,71 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ###########################################
+> #
+> # Read and Analyze Snaptron output files from the caudate queries made by makeScriptsSnaptron.R.
+> #
+> ###########################################
+> rm(list=ls()) #Clear R memory
+> gc() #empty garbage collector
+         used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+Ncells 268998 14.4     689902 36.9         NA   478114 25.6
+Vcells 457178  3.5    8388608 64.0      16384  1940578 14.9
+> 
+> ###Set working directory:
+> setwd("/Users/biancahoch/Documents/snaptronwork/snapout/caudate_gtex/")
+> 
+> #Update file path to point toward appropriate folder on the computer
+> caudate_list <- list.files(pattern=".tsv") 
+> 
+> #Read files:
+> caudate <- sapply(caudate_list, read.delim, simplify = FALSE)
+> 
+> #Print only the rows in which the number of samples that have one or more reads covering the intron constitute atleast 5% of the total samples searched:
+> 
+> #First find the number of anterior cingulate cortex samples:
+> load("~/Documents/splice_project/data/analysis/caudate_rail.Rdata")
+> caudate_rail
+[1] "54004,54014,54208,54273,53660,53661,53730,53759,53813,53929,53330,53331,53332,53350,53423,53451,52689,52701,52750,52806,52817,52851,52857,58483,58847,58871,58876,58930,58993,54965,54982,55063,57510,57647,57729,54444,54546,51406,51499,51514,51526,51575,51587,50765,50771,50810,50896,50929,50995,56881,56899,56929,57051,57103,57201,57318,57386,50451,50472,50484,50486,50522,50630,50698,50704,50712,50212,50233,50277,50311,50325,50419,55901,56081,56104,56171,52367,52382,52503,52547,52651,51875,58187,58189,58239,54610,54686,54777,54885,58077,59451,59473,59487,59532,59555,59661,59710,59118,59119,59188,59193,59285,53008,53175,53192,52034,52048,52189,52334,52344,55614,55631,55717,55749,55842,55271,55330,55506,55541,56558,56729,51077,51088,51159,51185,51188,51192,51225,51322,51385,56224,56331,56354,56478"
+> splitcaudate <- strsplit(caudate_rail, ",")
+> unlistsplitcaudate <- unlist(splitcaudate)
+> print(paste(length(unlistsplitcaudate)))
+[1] "134"
+> 
+> #See which junctions are present in atleast 5% of samples:
+> f <- function(df){
++   (df[which(df$samples_count >= length(unlistsplitcaudate) *.05), ])
++ }
+> 
+> #Apply function to list of dataframes:
+> dfList <- lapply( X=caudate, FUN=f ) 
+> #Bind the lists into one dataframe:
+> allDF <-do.call(rbind,dfList) 
+> #Write the dataframe to a .csv:
+> write.csv(allDF, "~/Documents/snaptronwork/snapout_analysis/caudate_fivepercent.csv")
+> #Check output:
+> #caudate_fivepercent <- read.csv("~/Documents/snaptronwork/snapout_analysis/caudate_fivepercent.csv", header = TRUE, sep = ",")
+> 
+> #############################################################
+> 
+> proc.time()
+   user  system elapsed 
+ 17.074   2.180  21.148 

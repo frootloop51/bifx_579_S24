@@ -1,0 +1,144 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ###########################################
+> #
+> # Title: Picking Novel Exons for First Pass Analysis
+> #
+> # Author: Bianca Hoch  (bih1@hood.edu)
+> # Date: 05/30/2019
+> #
+> ###########################################
+> 
+> rm(list=ls()) #Clear R memory
+> 
+> #Load Libraries:
+> library(GenomicRanges)
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, basename, cbind, colnames,
+    dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+    grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+    rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply,
+    union, unique, unsplit, which, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:base’:
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+> 
+> #Establish Paths:
+> nE <- read.csv("~/splice_project/data/rawdata/SupplementaryTable_19.csv", header=TRUE)
+> nE <- as.data.frame(nE)
+> 
+> #Set the title of the first column to avoid errors on reading in the data:
+> colnames(nE)[1] <- "Exon.1_Position"
+> 
+> #Variables:
+> newEx <- nE$REL.Exon_Position
+> ex1 <- nE$Exon.1_Position
+> ex2 <- nE$Exon.2_Position
+> 
+> #make the user defined function to make the Genomic Ranges:
+> makeGR <- function(regions)
++   {
++   a=as.character(regions)
++   eNames=sapply(strsplit(a,":"),"[[",1)
++   theCoords=sapply(strsplit(a,":"),"[[",2)
++   #theStrand=substr(theCoords,nchar(theCoords),nchar(theCoords))
++   #theCoords=substr(theCoords,1,nchar(theCoords)-2)
++   theStart=sapply(strsplit(theCoords,"-"),"[[",1)
++   theEnd=sapply(strsplit(theCoords,"-"),"[[",2)
++   theStart=as.integer(theStart)
++   theEnd=as.integer(theEnd)
++   #regions=GRanges(seqnames=eNames,ranges=IRanges(start=theStart,end=theEnd),strand=theStrand)
++   regions=GRanges(seqnames=eNames,ranges=IRanges(start=theStart,end=theEnd),strand="*")
++ }
+> 
+> #Make genomic ranges for new exons using the makeGR function:
+> newExons <- makeGR(newEx)
+> 
+> #Find width of new exons:
+> newWidth <- width(newExons)
+> 
+> #Divide coverage by width:
+> normCovNewEx <- nE$REL.Exon_Coverage/newWidth
+> 
+> #Make genomic ranges for exon 1s using the makeGR function:
+> ex1gr <- makeGR(ex1)
+> 
+> #Find width of exon 1s:
+> ex1width <- width(ex1gr)
+> 
+> #Divide coverage by width:
+> normEx1 <- nE$Exon.1_Coverage/ex1width
+> 
+> #Make genomic ranges for exon 2s using the makeGR function:
+> ex2gr <- makeGR(ex2)
+> 
+> #Find width of exon 2s:
+> ex2width <- width(ex2gr)
+> 
+> #Divide coverage by width:
+> normEx2 <- nE$Exon.2_Coverage/ex2width
+> 
+> #Determine which novel exons are at least 10% the size of normalized exon 1
+> goodEx1 <- which(normCovNewEx >= 0.1*normEx1)
+> 
+> #Determine which novel exons are at least 10% the size of normalized exon 2
+> goodEx2 <- which(normCovNewEx >= 0.1*normEx2)
+> 
+> #Merge the exons that pass the criteria:
+> goodEx <- unique(goodEx1,goodEx2)
+> 
+> #Create a subset of the newExons GRanges object that only contains the novel exons that meet our desired criteria:
+> newGR <- newExons[goodEx]
+> 
+> #Save the GRanges object:
+> save(newGR, file="~/splice_project/data/analysis/newGRanges.Rdata")
+> 
+> 
+> proc.time()
+   user  system elapsed 
+  4.212   0.216   4.427 

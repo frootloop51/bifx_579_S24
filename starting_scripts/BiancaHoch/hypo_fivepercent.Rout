@@ -1,0 +1,71 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ###########################################
+> #
+> # Read and Analyze Snaptron output files from the hypothalamus queries made by makeScriptsSnaptron.R.
+> #
+> ###########################################
+> rm(list=ls()) #Clear R memory
+> gc() #empty garbage collector
+         used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+Ncells 268998 14.4     689902 36.9         NA   478114 25.6
+Vcells 457178  3.5    8388608 64.0      16384  1940578 14.9
+> 
+> ###Set working directory:
+> setwd("/Users/biancahoch/Documents/snaptronwork/snapout/hypo_gtex/")
+> 
+> #Update file path to point toward appropriate folder on the computer
+> hypo_list <- list.files(pattern=".tsv") 
+> 
+> #Read files:
+> hypo <- sapply(hypo_list, read.delim, simplify = FALSE)
+> 
+> #Print only the rows in which the number of samples that have one or more reads covering the intron constitute atleast 5% of the total samples searched:
+> 
+> #First find the number of anterior cingulate cortex samples:
+> load("~/Documents/splice_project/data/analysis/hypo_rail.Rdata")
+> hypo_rail
+[1] "54167,54192,53684,53735,53319,53385,53564,52946,58514,58711,58748,58757,58827,58889,59003,54974,54980,55008,55039,55053,55080,57565,57687,54315,54328,54449,54450,54506,51413,51518,51577,51593,50756,50794,50798,50825,50833,50914,56920,57050,57097,57123,57296,57324,57384,57435,50099,50126,50293,50347,56006,56052,52390,52475,52608,51716,51784,58224,58278,58324,58343,58349,58365,58388,58421,54612,54622,54674,54712,54835,54837,57829,57895,57897,58015,59540,59663,59715,59213,59319,59397,53162,53295,52031,52175,52244,52299,55624,55651,55762,55782,55268,55424,55426,55480,55490,55507,56583,56632,56713,56796,56818,56226,56396"
+> splithypo <- strsplit(hypo_rail, ",")
+> unlistsplithypo <- unlist(splithypo)
+> print(paste(length(unlistsplithypo)))
+[1] "104"
+> 
+> #See which junctions are present in atleast 5% of samples:
+> f <- function(df){
++   (df[which(df$samples_count >= length(unlistsplithypo) *.05), ])
++ }
+> 
+> #Apply function to list of dataframes:
+> dfList <- lapply( X=hypo, FUN=f ) 
+> #Bind the lists into one dataframe:
+> allDF <-do.call(rbind,dfList) 
+> #Write the dataframe to a .csv:
+> write.csv(allDF, "~/Documents/snaptronwork/snapout_analysis/hypo_fivepercent.csv")
+> #Check output:
+> #hypo_fivepercent <- read.csv("~/Documents/snaptronwork/snapout_analysis/hypo_fivepercent.csv", header = TRUE, sep = ",")
+> 
+> #############################################################
+> 
+> proc.time()
+   user  system elapsed 
+ 14.993   2.487  19.261 

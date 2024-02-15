@@ -1,0 +1,84 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ###########################################
+> #
+> # Read and Analyze Snaptron output files from the substantia nigra queries made by makeScriptsSnaptron.R.
+> #
+> ###########################################
+> rm(list=ls()) #Clear R memory
+> gc() #empty garbage collector
+         used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+Ncells 268998 14.4     689902 36.9         NA   478114 25.6
+Vcells 457178  3.5    8388608 64.0      16384  1940578 14.9
+> 
+> ###Set working directory:
+> setwd("/Users/biancahoch/Documents/snaptronwork/snapout/subnigra_gtex/")
+> 
+> #Update file path to point toward appropriate folder on the computer
+> subnigra_list <- list.files(pattern=".tsv") 
+> 
+> #Read files:
+> subnigra <- sapply(subnigra_list, read.delim, simplify = FALSE)
+> 
+> #Print only the rows in which the number of samples that have one or more reads covering the intron constitute atleast 5% of the total samples searched:
+> 
+> #First find the number of anterior cingulate cortex samples:
+> load("~/Documents/splice_project/data/analysis/subnigra_rail.Rdata")
+> subnigra_rail
+[1] "53990,54064,54146,54216,53650,53681,53758,53815,53931,53582,52852,52989,58503,58813,57559,57637,57648,54322,54548,51437,51457,51599,50758,50977,56918,56925,56934,56943,57076,57109,57311,57481,50423,50439,50485,50626,50110,50160,50272,50383,55924,56013,56059,56077,56154,52522,52601,51715,51757,51981,54677,54844,54873,57946,58047,59621,59718,59154,59309,53234,53279,52257,52304,52309,55285,56589,56595,51359,51386,56321,56326"
+> splitsubnigra <- strsplit(subnigra_rail, ",")
+> unlistsplitsubnigra <- unlist(splitsubnigra)
+> print(paste(length(unlistsplitsubnigra)))
+[1] "71"
+> 
+> #See which junctions are present in atleast 5% of samples:
+> f <- function(df){
++   (df[which(df$samples_count >= length(unlistsplitsubnigra) *.05), ])
++ }
+> 
+> #Apply function to list of dataframes:
+> dfList <- lapply( X=subnigra, FUN=f ) 
+> #Bind the lists into one dataframe:
+> allDF <-do.call(rbind,dfList) 
+> #Write the dataframe to a .csv:
+> write.csv(allDF, "~/Documents/snaptronwork/snapout_analysis/subnigra_fivepercent.csv")
+> #Check output:
+> #subnigra_fivepercent <- read.csv("~/Documents/snaptronwork/snapout_analysis/subnigra_fivepercent.csv", header = TRUE, sep = ",")
+> 
+> #See which junctions are present in atleast 60% of samples:
+> f2 <- function(df){
++   (df[which(df$samples_count >= length(unlistsplitsubnigra) *.60), ])
++ }
+> #Apply function to list of dataframes:
+> dfList2 <- lapply( X=subnigra, FUN=f2 ) 
+> #Bind the lists into one dataframe:
+> allDF2 <-do.call(rbind,dfList2) 
+> #Write the dataframe to a .csv: (NOTE: ADD ROWNAMES)
+> write.csv(allDF2, "~/Documents/snaptronwork/subnigra_sixtypercent.csv")
+> #Check output:
+> #subnigra_sixtypercent <- read.csv("~/Documents/snaptronwork/subnigra_sixtypercent.csv", header = TRUE, sep = ",")
+> 
+> #############################################################
+> 
+> proc.time()
+   user  system elapsed 
+ 38.354   4.914  45.592 

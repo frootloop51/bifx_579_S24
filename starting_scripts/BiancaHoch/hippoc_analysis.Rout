@@ -1,0 +1,84 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ###########################################
+> #
+> # Read and Analyze Snaptron output files from the hippocampus queries made by makeScriptsSnaptron.R.
+> #
+> ###########################################
+> rm(list=ls()) #Clear R memory
+> gc() #empty garbage collector
+         used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+Ncells 268998 14.4     689902 36.9         NA   478114 25.6
+Vcells 457178  3.5    8388608 64.0      16384  1940578 14.9
+> 
+> ###Set working directory:
+> setwd("/Users/biancahoch/Documents/snaptronwork/snapout/hippoc_gtex/")
+> 
+> #Update file path to point toward appropriate folder on the computer
+> hippoc_list <- list.files(pattern=".tsv") 
+> 
+> #Read files:
+> hippoc <- sapply(hippoc_list, read.delim, simplify = FALSE)
+> 
+> #Print only the rows in which the number of samples that have one or more reads covering the intron constitute atleast 5% of the total samples searched:
+> 
+> #First find the number of anterior cingulate cortex samples:
+> load("~/Documents/splice_project/data/analysis/hippoc_rail.Rdata")
+> hippoc_rail
+[1] "54058,54197,54258,53645,53655,53677,53857,53867,53341,53360,53448,53602,53614,52725,52758,52789,52832,58481,58495,58809,58854,58887,58919,58929,59048,55011,55021,55029,57542,57778,57826,54313,54329,54330,54395,54453,54598,50801,50827,50979,51008,56992,57336,57372,50480,50647,50697,50133,50178,50263,50301,50341,50370,56023,56107,56114,56185,52356,52371,52429,52548,52560,51852,51888,52009,54623,54698,54721,54886,58058,58088,59504,59559,59686,59694,59308,59362,59411,53047,53216,53225,52084,52167,52229,52252,52349,55595,55299,55397,55483,56543,56569,56587,56766,51103,51155,51190,51258,51279,56310,56355,56404,56446"
+> splithippoc <- strsplit(hippoc_rail, ",")
+> unlistsplithippoc <- unlist(splithippoc)
+> print(paste(length(unlistsplithippoc)))
+[1] "103"
+> 
+> #See which junctions are present in atleast 5% of samples:
+> f <- function(df){
++   (df[which(df$samples_count >= length(unlistsplithippoc) *.05), ])
++ }
+> 
+> #Apply function to list of dataframes:
+> dfList <- lapply( X=hippoc, FUN=f ) 
+> #Bind the lists into one dataframe:
+> allDF <-do.call(rbind,dfList) 
+> #Write the dataframe to a .csv:
+> write.csv(allDF, "~/Documents/snaptronwork/snapout_analysis/hippoc_fivepercent.csv")
+> #Check output:
+> #hippoc_fivepercent <- read.csv("~/Documents/snaptronwork/snapout_analysis/hippoc_fivepercent.csv", header = TRUE, sep = ",")
+> 
+> #See which junctions are present in atleast 60% of samples:
+> f2 <- function(df){
++   (df[which(df$samples_count >= length(unlistsplithippoc) *.60), ])
++ }
+> #Apply function to list of dataframes:
+> dfList2 <- lapply( X=hippoc, FUN=f2 ) 
+> #Bind the lists into one dataframe:
+> allDF2 <-do.call(rbind,dfList2) 
+> #Write the dataframe to a .csv: (NOTE: ADD ROWNAMES)
+> write.csv(allDF2, "~/Documents/snaptronwork/hippoc_sixtypercent.csv")
+> #Check output:
+> #hippoc_sixtypercent <- read.csv("~/Documents/snaptronwork/hippoc_sixtypercent.csv", header = TRUE, sep = ",")
+> 
+> #############################################################
+> 
+> proc.time()
+   user  system elapsed 
+ 36.675   4.496  42.739 

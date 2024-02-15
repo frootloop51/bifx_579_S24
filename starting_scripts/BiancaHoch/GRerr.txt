@@ -1,0 +1,3 @@
+nohup: ignoring input and appending output to 'nohup.out'
+./GRangesFunction.R: 9: ./GRangesFunction.R: : not found
+./GRangesFunction.R: 10: ./GRangesFunction.R: Syntax error: word unexpected (expecting ")")

@@ -1,0 +1,87 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ###########################################
+> #
+> # Read and Analyze Snaptron output files from the amygdala queries made by makeScriptsSnaptron.R.
+> #
+> ###########################################
+> rm(list=ls()) #Clear R memory
+> gc() #empty garbage collector
+         used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+Ncells 268998 14.4     689902 36.9         NA   478114 25.6
+Vcells 457178  3.5    8388608 64.0      16384  1940578 14.9
+> 
+> ###Set working directory:
+> setwd("/Users/biancahoch/Documents/snaptronwork/snapout/amygdala_gtex/")
+> 
+> #Update file path to point toward appropriate folder on the computer
+> amygdala_list <- list.files(pattern=".tsv") 
+> 
+> #Read files:
+> amygdala <- sapply(amygdala_list, read.delim, simplify = FALSE)
+> 
+> #Print only the rows in which the number of samples that have one or more reads covering the intron constitute atleast 5% of the total samples searched:
+> 
+> #First find the number of anterior cingulate cortex samples:
+> load("~/Documents/splice_project/data/analysis/amygdala_rail.Rdata")
+> amygdala_rail
+[1] "53969,54029,54069,54255,53362,53363,52741,52908,58590,58832,58950,59009,54962,55002,55172,57589,57592,54294,54301,51573,50769,50772,50817,50846,50962,50965,51060,56865,56911,57081,57126,57192,50507,50537,50589,50651,50159,50163,50210,50213,50276,50355,50371,55949,56130,56165,56190,56206,52670,51755,52002,58163,58205,58450,54782,54913,58050,58080,59480,59505,59138,59329,53116,52077,52163,52292,55575,55584,55626,55693,55769,55318,55503,56596,56700,56803,51194,51227,51231,56231,56352"
+> splitamygdala <- strsplit(amygdala_rail, ",")
+> unlistsplitamygdala <- unlist(splitamygdala)
+> print(paste(length(unlistsplitamygdala)))
+[1] "81"
+> 
+> #See which junctions are present in atleast 5% of samples:
+> f <- function(df){
++   (df[which(df$samples_count >= length(unlistsplitamygdala) *.05), ])
++ }
+> 
+> #Apply function to list of dataframes:
+> dfList <- lapply( X=amygdala, FUN=f ) 
+> #Bind the lists into one dataframe:
+> allDF <-do.call(rbind,dfList) 
+> #Write the dataframe to a .csv:
+> write.csv(allDF, "~/Documents/snaptronwork/snapout_analysis/amygdala_fivepercent.csv")
+> #Check output:
+> #amygdala_fivepercent <- read.csv("~/Documents/snaptronwork/snapout_analysis/amygdala_fivepercent.csv", header = TRUE, sep = ",")
+> 
+> #See which junctions are present in atleast 60% of samples:
+> f2 <- function(df){
++   (df[which(df$samples_count >= length(unlistsplitamygdala) *.60), ])
++ }
+> #Apply function to list of dataframes:
+> dfList2 <- lapply( X=amygdala, FUN=f2 ) 
+> #Bind the lists into one dataframe:
+> allDF2 <-do.call(rbind,dfList2) 
+> #Write the dataframe to a .csv: (NOTE: ADD ROWNAMES)
+> write.csv(allDF2, "~/Documents/snaptronwork/amygdala_sixtypercent.csv")
+> #Check output:
+> #amygdala_sixtypercent <- read.csv("~/Documents/snaptronwork/amygdala_sixtypercent.csv", header = TRUE, sep = ",")
+> 
+> #############################################################
+> 
+> 
+> 
+> 
+> proc.time()
+   user  system elapsed 
+ 17.655   2.435  21.733 

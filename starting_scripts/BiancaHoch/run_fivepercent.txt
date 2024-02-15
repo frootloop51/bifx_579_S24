@@ -1,0 +1,25 @@
+R CMD BATCH acc_fivepercent.R 
+
+R CMD BATCH amygdala_fivepercent.R 
+
+R CMD BATCH caudate_fivepercent.R 
+
+R CMD BATCH cerebellarh_fivepercent.R 
+
+R CMD BATCH cerebellum_fivepercent.R 
+
+R CMD BATCH cortex_fivepercent.R 
+
+R CMD BATCH frontalcortex_fivepercent.R 
+
+R CMD BATCH hippoc_fivepercent.R 
+
+R CMD BATCH hypo_fivepercent.R 
+
+R CMD BATCH nucacc_fivepercent.R 
+
+R CMD BATCH putamen_fivepercent.R 
+
+R CMD BATCH spinalc_fivepercent.R 
+
+R CMD BATCH subnigra_fivepercent.R 

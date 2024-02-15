@@ -1,0 +1,71 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ###########################################
+> #
+> # Read and Analyze Snaptron output files from the cortex queries made by makeScriptsSnaptron.R.
+> #
+> ###########################################
+> rm(list=ls()) #Clear R memory
+> gc() #empty garbage collector
+         used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+Ncells 268998 14.4     689902 36.9         NA   478114 25.6
+Vcells 457178  3.5    8388608 64.0      16384  1940578 14.9
+> 
+> ###Set working directory:
+> setwd("/Users/biancahoch/Documents/snaptronwork/snapout/cortex_gtex/")
+> 
+> #Update file path to point toward appropriate folder on the computer
+> cortex_list <- list.files(pattern=".tsv") 
+> 
+> #Read files:
+> cortex <- sapply(cortex_list, read.delim, simplify = FALSE)
+> 
+> #Print only the rows in which the number of samples that have one or more reads covering the intron constitute atleast 5% of the total samples searched:
+> 
+> #First find the number of anterior cingulate cortex samples:
+> load("~/Documents/splice_project/data/analysis/cortex_rail.Rdata")
+> cortex_rail
+[1] "53971,53983,54090,54123,54165,54253,54257,53675,53739,53774,53795,53891,53898,53324,53567,52680,52728,52729,52807,52903,52919,52942,58510,58595,58621,58644,58867,59081,54946,54993,55010,55013,55059,55177,57781,54287,54289,54338,54461,54550,54569,51404,51456,51459,51553,50750,50800,50802,50845,50881,50986,51012,56917,57043,57315,57396,57482,50459,50500,50582,50599,50615,50646,50167,50400,55956,55960,56029,56046,56047,52584,51808,51809,51816,51836,51837,51864,51975,51992,58222,58305,58393,58413,54617,54648,54731,57905,57948,58035,58065,59461,59530,59604,59674,59678,59753,59175,59269,59272,53037,53142,53152,53298,52152,52176,52185,52240,52253,55672,55681,55694,55774,55833,55280,55319,55348,55400,55405,55496,56684,56747,56822,51133,51196,51293,51339,51356,56260,56358,56435,56520,56537"
+> splitcortex <- strsplit(cortex_rail, ",")
+> unlistsplitcortex <- unlist(splitcortex)
+> print(paste(length(unlistsplitcortex)))
+[1] "132"
+> 
+> #See which junctions are present in atleast 5% of samples:
+> f <- function(df){
++   (df[which(df$samples_count >= length(unlistsplitcortex) *.05), ])
++ }
+> 
+> #Apply function to list of dataframes:
+> dfList <- lapply( X=cortex, FUN=f ) 
+> #Bind the lists into one dataframe:
+> allDF <-do.call(rbind,dfList) 
+> #Write the dataframe to a .csv:
+> write.csv(allDF, "~/Documents/snaptronwork/snapout_analysis/cortex_fivepercent.csv")
+> #Check output:
+> #cortex_fivepercent <- read.csv("~/Documents/snaptronwork/snapout_analysis/cortex_fivepercent.csv", header = TRUE, sep = ",")
+> 
+> #############################################################
+> 
+> proc.time()
+   user  system elapsed 
+ 17.126   2.842  21.909 

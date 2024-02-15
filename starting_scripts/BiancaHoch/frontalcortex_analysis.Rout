@@ -1,0 +1,84 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> ###########################################
+> #
+> # Read and Analyze Snaptron output files from the frontal cortex queries made by makeScriptsSnaptron.R.
+> #
+> ###########################################
+> rm(list=ls()) #Clear R memory
+> gc() #empty garbage collector
+         used (Mb) gc trigger (Mb) limit (Mb) max used (Mb)
+Ncells 268998 14.4     689902 36.9         NA   478114 25.6
+Vcells 457178  3.5    8388608 64.0      16384  1940578 14.9
+> 
+> ###Set working directory:
+> setwd("/Users/biancahoch/Documents/snaptronwork/snapout/frontalcortex_gtex/")
+> 
+> #Update file path to point toward appropriate folder on the computer
+> frontalcortex_list <- list.files(pattern=".tsv") 
+> 
+> #Read files:
+> frontalcortex <- sapply(frontalcortex_list, read.delim, simplify = FALSE)
+> 
+> #Print only the rows in which the number of samples that have one or more reads covering the intron constitute atleast 5% of the total samples searched:
+> 
+> #First find the number of anterior cingulate cortex samples:
+> load("~/Documents/splice_project/data/analysis/frontalcortex_rail.Rdata")
+> frontalcortex_rail
+[1] "54101,54124,54130,54194,54233,53654,53704,53717,53788,53885,53387,53463,53536,52675,52781,52829,58513,58622,58632,58639,58655,58657,58731,58739,58741,58747,58802,58844,58915,58973,59023,59075,55026,55195,57522,57554,57674,57705,57809,54285,51455,51565,50832,50969,51022,56875,56896,56910,57209,57262,57340,57348,57498,50425,50430,50445,50475,50508,50518,50707,56035,52372,52380,52439,52533,52567,51802,51974,58196,58297,54668,54779,54852,54880,57859,57912,57941,57952,58031,59454,59478,59627,59656,59685,59700,59748,59191,59221,59279,59333,59334,59404,59423,53023,53103,53109,53168,53187,53251,53261,53296,52032,55574,55579,55703,55800,55866,55312,55346,55410,56575,56764,51075,51134,51220,51361,51377,56246,56267,56438"
+> splitfrontalcortex <- strsplit(frontalcortex_rail, ",")
+> unlistsplitfrontalcortex <- unlist(splitfrontalcortex)
+> print(paste(length(unlistsplitfrontalcortex)))
+[1] "120"
+> 
+> #See which junctions are present in atleast 5% of samples:
+> f <- function(df){
++   (df[which(df$samples_count >= length(unlistsplitfrontalcortex) *.05), ])
++ }
+> 
+> #Apply function to list of dataframes:
+> dfList <- lapply( X=frontalcortex, FUN=f ) 
+> #Bind the lists into one dataframe:
+> allDF <-do.call(rbind,dfList) 
+> #Write the dataframe to a .csv:
+> write.csv(allDF, "~/Documents/snaptronwork/snapout_analysis/frontalcortex_fivepercent.csv")
+> #Check output:
+> #frontalcortex_fivepercent <- read.csv("~/Documents/snaptronwork/snapout_analysis/frontalcortex_fivepercent.csv", header = TRUE, sep = ",")
+> 
+> #See which junctions are present in atleast 60% of samples:
+> f2 <- function(df){
++   (df[which(df$samples_count >= length(unlistsplitfrontalcortex) *.60), ])
++ }
+> #Apply function to list of dataframes:
+> dfList2 <- lapply( X=frontalcortex, FUN=f2 ) 
+> #Bind the lists into one dataframe:
+> allDF2 <-do.call(rbind,dfList2) 
+> #Write the dataframe to a .csv: (NOTE: ADD ROWNAMES)
+> write.csv(allDF2, "~/Documents/snaptronwork/frontalcortex_sixtypercent.csv")
+> #Check output:
+> #frontalcortex_sixtypercent <- read.csv("~/Documents/snaptronwork/frontalcortex_sixtypercent.csv", header = TRUE, sep = ",")
+> 
+> #############################################################
+> 
+> proc.time()
+   user  system elapsed 
+ 40.052   4.860  46.689 
