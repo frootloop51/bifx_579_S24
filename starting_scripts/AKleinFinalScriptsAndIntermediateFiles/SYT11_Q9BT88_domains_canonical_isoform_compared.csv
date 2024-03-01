@@ -1,0 +1,4 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","SYT11_canonical","C2 domain (Calcium/lipid-binding domain, CaLB)","150-276",2.23e-34
+"2","SYT11_canonical","C2 domain (Calcium/lipid-binding domain, CaLB)","292-428",1.08e-33
+"3","SYT11_isoform",NA,NA,NA

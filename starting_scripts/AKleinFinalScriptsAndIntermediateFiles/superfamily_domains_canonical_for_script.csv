@@ -1,0 +1,63 @@
+﻿Protein_name,Seq_ID,Match_region,SCOP_superfamily,E_value
+KCAB2,Q13303,39-359,NAD(P)-linked oxidoreductase,4.32E-94
+CMTA1,Q9Y6Y1,872-952,E set domains,6.58E-21
+CMTA1,Q9Y6Y1,1058-1166,Ankyrin repeat,7.00E-14
+CMTA1,Q9Y6Y1,1519-1623,P-loop containing nucleoside triphosphate hydrolases,1.06E-09
+WDTC1,Q8N5D0,36-240,WD40 repeat-like,6.64E-55
+WDTC1,Q8N5D0,271-305,WD40 repeat-like,6.64E-55
+WDTC1,Q8N5D0,359-466,TPR-like,1.14E-23
+WDTC1,Q8N5D0,530-608,WD40 repeat-like,6.64E-55
+TM39B,Q9GZU3,NA,NA,NA
+GDE,P35573,119-253,(Trans)glycosidases,3.58E-40
+GDE,P35573,458-702,(Trans)glycosidases,3.58E-40
+GDE,P35573,1085-1190,Six-hairpin glycosidases,6.53E-51
+GDE,P35573,1252-1532,Six-hairpin glycosidases,6.53E-51
+FPPS,P14324,77-418,Terpenoid synthases,1.80E-91
+SYT11,Q9BT88,150-276,"C2 domain (Calcium/lipid-binding domain, CaLB)",2.23E-34
+SYT11,Q9BT88,292-428,"C2 domain (Calcium/lipid-binding domain, CaLB)",1.08E-33
+CE350,Q5VT06,2486-2580,Cap-Gly domain,5.76E-33
+KCTD3,Q9Y597,18-113,POZ domain,3.93E-27
+KCTD3,Q9Y597,212-449,WD40 repeat-like,7.53E-19
+KCTD3,Q9Y597,517-573,WD40 repeat-like,7.53E-19
+F149B,Q96BN6,NA,NA,NA
+SAC2,Q9Y2H2,NA,NA,NA
+RTN3,O95197,NA,NA,NA
+DPP3,Q9NY33,NA,NA,NA
+RBM4,Q9BWF3,3-75,"RNA-binding domain, RBD",1.29E-21
+RBM4,Q9BWF3,75-170,"RNA-binding domain, RBD",4.43E-25
+NEUR3,Q9UQ49,13-289,Sialidases,5.05E-98
+NEUR3,Q9UQ49,319-407,Sialidases,5.05E-98
+AAMDC,Q9H7C9,3-122,MTH938-like,3.79E-34
+ABCG4,Q9H172,80-299,P-loop containing nucleoside triphosphate hydrolases,1.77E-45
+DNM1L,O00429,1-309,P-loop containing nucleoside triphosphate hydrolases,2.70E-77
+DIP2B,Q9P265,336-692,Acetyl-CoA synthetase-like,3.92E-48
+DIP2B,Q9P265,723-924,Acetyl-CoA synthetase-like,3.92E-48
+DIP2B,Q9P265,988-1567,Acetyl-CoA synthetase-like,1.31E-57
+DGKA,P23743,1-118,EF-hand,4.71E-48
+DGKA,P23743,45-58,EF-hand,9.62E-15
+DGKA,P23743,105-183,EF-hand,9.62E-15
+DGKA,P23743,186-252,Cysteine-rich domain,2.24E-15
+DGKA,P23743,256-324,Cysteine-rich domain,8.82E-10
+DGKA,P23743,376-614,NAD kinase/diacylglycerol kinase-like,1.13E-52
+DGKA,P23743,647-714,NAD kinase/diacylglycerol kinase-like,1.13E-52
+PLBL2,Q8NHP8,NA,NA,NA
+GL1D1,Q96MS3,36-340,UDP-Glycosyltransferase/glycogen phosphorylase,2.71E-40
+BORA,Q6PGQ7,NA,NA,NA
+CDC16,Q13042,5-103,TPR-like,6.03E-08
+CDC16,Q13042,130-167,TPR-like,6.03E-08
+CDC16,Q13042,250-509,TPR-like,7.96E-26
+LRFN5,Q96NI6,36-291,L domain-like,1.80E-46
+LRFN5,Q96NI6,284-374,Immunoglobulin,2.65E-18
+LRFN5,Q96NI6,422-495,Fibronectin type III,1.26E-06
+KLDC1,Q8N7A1,13-163,Kelch motif,2.09E-27
+KLDC1,Q8N7A1,168-333,Kelch motif,3.53E-33
+KTN1,Q86UP2,NA,NA,NA
+KCRU,P12532,42-138,Guanido kinase N-terminal domain,1.02E-41
+KCRU,P12532,138-141,Glutamine synthetase/guanido kinase,1.51E-111
+SNX1,Q13596,140-269,PX domain,5.10E-32
+SNX1,Q13596,309-520,BAR/IMD domain-like,1.96E-06
+HACD3,Q9P035,6-113,HSP20-like chaperones,2.09E-26
+NEIL1,Q96FI4,2-130,N-terminal domain of MutM-like DNA repair proteins,9.42E-31
+NEIL1,Q96FI4,133-244,S13-like H2TH domain,1.03E-27
+NEIL1,Q96FI4,248-290,Glucocorticoid receptor-like (DNA-binding domain),6.13E-19
+KPBB,Q93100,43-476,Six-hairpin glycosidases,4.68E-64

@@ -1,0 +1,6 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","LRFN5_canonical","L domain-like","36-291",1.8e-46
+"2","LRFN5_canonical","Immunoglobulin","284-374",2.65e-18
+"3","LRFN5_canonical","Fibronectin type III","422-495",1.26e-06
+"4","LRFN5_isoform","L domain-like","36-291",7.78e-47
+"5","LRFN5_isoform","Immunoglobulin","284-374",1.15e-17

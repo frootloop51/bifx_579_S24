@@ -1,0 +1,5 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","CMTA1_canonical","E set domains","872-952",6.58e-21
+"2","CMTA1_canonical","Ankyrin repeat","1058-1166",7e-14
+"3","CMTA1_canonical","P-loop containing nucleoside triphosphate hydrolases","1519-1623",1.06e-09
+"4","CMTA1_isoform",NA,NA,NA

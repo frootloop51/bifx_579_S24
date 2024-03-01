@@ -1,0 +1,9 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","WDTC1_canonical","WD40 repeat-like","36-240",6.64e-55
+"2","WDTC1_canonical","WD40 repeat-like","271-305",6.64e-55
+"3","WDTC1_canonical","TPR-like","359-466",1.14e-23
+"4","WDTC1_canonical","WD40 repeat-like","530-608",6.64e-55
+"5","WDTC1_isoform","WD40 repeat-like","72-273",4.03e-55
+"6","WDTC1_isoform","WD40 repeat-like","304-338",4.03e-55
+"7","WDTC1_isoform","TPR-like","392-499",1.32e-23
+"8","WDTC1_isoform","WD40 repeat-like","563-641",4.03e-55

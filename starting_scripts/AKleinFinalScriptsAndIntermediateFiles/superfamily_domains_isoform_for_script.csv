@@ -1,0 +1,54 @@
+﻿Protein_name,Seq_ID,Match_region,SCOP_superfamily,E_value
+KCAB2,Q13303,39-359,NAD(P)-linked oxidoreductase,5.54E-11
+CMTA1,Q9Y6Y1,NA,NA,NA
+WDTC1,Q8N5D0,72-273,WD40 repeat-like,4.03E-55
+WDTC1,Q8N5D0,304-338,WD40 repeat-like,4.03E-55
+WDTC1,Q8N5D0,392-499,TPR-like,1.32E-23
+WDTC1,Q8N5D0,563-641,WD40 repeat-like,4.03E-55
+TM39B,Q9GZU3,NA,NA,NA
+GDE,P35573,119-253,(Trans)glycosidases,3.58E-40
+GDE,P35573,458-702,(Trans)glycosidases,3.58E-40
+GDE,P35573,1085-1190,Six-hairpin glycosidases,7.58E-43
+GDE,P35573,1252-1472,Six-hairpin glycosidases,7.58E-43
+FPPS,P14324,NA,NA,NA
+SYT11,Q9BT88,NA,NA,NA
+CE350,Q5VT06,NA,NA,NA
+KCTD3,Q9Y597,18-113,POZ domain,1.96E-27
+KCTD3,Q9Y597,216-453,WD40 repeat-like,5.80E-17
+F149B,Q96BN6,NA,NA,NA
+SAC2,Q9Y2H2,NA,NA,NA
+RTN3,O95197,NA,NA,NA
+DPP3,Q9NY33,NA,NA,NA
+RBM4,Q9BWF3,3-75,"RNA-binding domain, RBD",2.96E-22
+RBM4,Q9BWF3,74-139,"RNA-binding domain, RBD",1.48E-20
+NEUR3,Q9UQ49,13-65,Sialidases,1.37E-08
+AAMDC,Q9H7C9,6-81,MTH938-like,5.89E-18
+ABCG4,Q9H172,NA,NA,NA
+DNM1L,O00429,1-153,P-loop containing nucleoside triphosphate hydrolases,9.81E-39
+DIP2B,Q9P265,336-692,Acetyl-CoA synthetase-like,3.01E-43
+DIP2B,Q9P265,723-829,Acetyl-CoA synthetase-like,3.01E-43
+DGKA,P23743,1-118,EF-hand,1.55E-48
+DGKA,P23743,45-58,EF-hand,4.66E-15
+DGKA,P23743,105-183,EF-hand,4.66E-15
+DGKA,P23743,186-252,Cysteine-rich domain,1.36E-15
+DGKA,P23743,256-324,Cysteine-rich domain,4.78E-10
+DGKA,P23743,376-484,NAD kinase/diacylglycerol kinase-like,8.72E-25
+PLBL2,Q8NHP8,NA,NA,NA
+GL1D1,Q96MS3,11-359,UDP-Glycosyltransferase/glycogen phosphorylase,2.51E-35
+BORA,Q6PGQ7,NA,NA,NA
+CDC16,Q13042,4-103,TPR-like,7.59E-10
+CDC16,Q13042,130-166,TPR-like,7.59E-10
+CDC16,Q13042,282-316,TPR-like,7.59E-10
+CDC16,Q13042,300-524,HCP-like,2.20E-26
+LRFN5,Q96NI6,36-291,L domain-like,7.78E-47
+LRFN5,Q96NI6,284-374,Immunoglobulin,1.15E-17
+KLDC1,Q8N7A1,10-234,"Galactose oxidase, central domain",7.32E-34
+KTN1,Q86UP2,NA,NA,NA
+KCRU,P12532,42-138,Guanido kinase N-terminal domain,5.36E-42
+KCRU,P12532,138-291,Glutamine synthetase/guanido kinase,5.33E-60
+SNX1,Q13596,NA,NA,NA
+HACD3,Q9P035,6-30,HSP20-like chaperones,3.14E-04
+NEIL1,Q96FI4,2-130,N-terminal domain of MutM-like DNA repair proteins,1.07E-30
+NEIL1,Q96FI4,171-270,S13-like H2TH domain,9.27E-24
+NEIL1,Q96FI4,274-316,Glucocorticoid receptor-like (DNA-binding domain),6.70E-19
+KPBB,Q93100,43-476,Six-hairpin glycosidases,2.38E-64

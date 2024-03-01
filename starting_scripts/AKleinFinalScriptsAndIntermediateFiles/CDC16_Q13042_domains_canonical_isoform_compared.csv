@@ -1,0 +1,8 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","CDC16_canonical","TPR-like","5-103",6.03e-08
+"2","CDC16_canonical","TPR-like","130-167",6.03e-08
+"3","CDC16_canonical","TPR-like","250-509",7.96e-26
+"4","CDC16_isoform","TPR-like","4-103",7.59e-10
+"5","CDC16_isoform","TPR-like","130-166",7.59e-10
+"6","CDC16_isoform","TPR-like","282-316",7.59e-10
+"7","CDC16_isoform","HCP-like","300-524",2.2e-26

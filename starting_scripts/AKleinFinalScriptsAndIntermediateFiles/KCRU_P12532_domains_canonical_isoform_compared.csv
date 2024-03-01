@@ -1,0 +1,5 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","KCRU_canonical","Guanido kinase N-terminal domain","42-138",1.02e-41
+"2","KCRU_canonical","Glutamine synthetase/guanido kinase","138-141",1.51e-111
+"3","KCRU_isoform","Guanido kinase N-terminal domain","42-138",5.36e-42
+"4","KCRU_isoform","Glutamine synthetase/guanido kinase","138-291",5.33e-60

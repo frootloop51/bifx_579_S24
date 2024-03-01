@@ -1,0 +1,14 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","DGKA_canonical","EF-hand","1-118",4.71e-48
+"2","DGKA_canonical","EF-hand","45-58",9.62e-15
+"3","DGKA_canonical","EF-hand","105-183",9.62e-15
+"4","DGKA_canonical","Cysteine-rich domain","186-252",2.24e-15
+"5","DGKA_canonical","Cysteine-rich domain","256-324",8.82e-10
+"6","DGKA_canonical","NAD kinase/diacylglycerol kinase-like","376-614",1.13e-52
+"7","DGKA_canonical","NAD kinase/diacylglycerol kinase-like","647-714",1.13e-52
+"8","DGKA_isoform","EF-hand","1-118",1.55e-48
+"9","DGKA_isoform","EF-hand","45-58",4.66e-15
+"10","DGKA_isoform","EF-hand","105-183",4.66e-15
+"11","DGKA_isoform","Cysteine-rich domain","186-252",1.36e-15
+"12","DGKA_isoform","Cysteine-rich domain","256-324",4.78e-10
+"13","DGKA_isoform","NAD kinase/diacylglycerol kinase-like","376-484",8.72e-25

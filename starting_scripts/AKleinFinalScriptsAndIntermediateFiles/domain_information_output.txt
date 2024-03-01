@@ -1,0 +1,212 @@
+KCAB2_Q13303_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+CMTA1_Q9Y6Y1_domains_canonical_isoform_compared.csv
+Domains lost: Ankyrin repeat 1
+Domains lost: E set domains 1
+Domains lost: P-loop containing nucleoside triphosphate hydrolases 1
+Domains gained:  
+WDTC1_Q8N5D0_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+TM39B_Q9GZU3_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+GDE_P35573_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+FPPS_P14324_domains_canonical_isoform_compared.csv
+Domains lost: Terpenoid synthases 1
+Domains gained:  
+SYT11_Q9BT88_domains_canonical_isoform_compared.csv
+Domains lost: C2 domain (Calcium/lipid-binding domain, CaLB) 2
+Domains gained:  
+CE350_Q5VT06_domains_canonical_isoform_compared.csv
+Domains lost: Cap-Gly domain 1
+Domains gained:  
+KCTD3_Q9Y597_domains_canonical_isoform_compared.csv
+Domains lost: WD40 repeat-like 1
+Domains gained:  
+F149B_Q96BN6_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+SAC2_Q9Y2H2_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+RTN3_O95197_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+DPP3_Q9NY33_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+RBM4_Q9BWF3_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+NEUR3_Q9UQ49_domains_canonical_isoform_compared.csv
+Domains lost: Sialidases 1
+Domains gained:  
+AAMDC_Q9H7C9_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+ABCG4_Q9H172_domains_canonical_isoform_compared.csv
+Domains lost: P-loop containing nucleoside triphosphate hydrolases 1
+Domains gained:  
+DNM1L_O00429_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+DIP2B_Q9P265_domains_canonical_isoform_compared.csv
+Domains lost: Acetyl-CoA synthetase-like 1
+Domains gained:  
+DGKA_P23743_domains_canonical_isoform_compared.csv
+Domains lost: NAD kinase/diacylglycerol kinase-like 1
+Domains gained:  
+PLBL2_Q8NHP8_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+GL1D1_Q96MS3_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+BORA_Q6PGQ7_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+CDC16_Q13042_domains_canonical_isoform_compared.csv
+Domains lost:  
+Domains gained: HCP-like 1
+LRFN5_Q96NI6_domains_canonical_isoform_compared.csv
+Domains lost: Fibronectin type III 1
+Domains gained:  
+KLDC1_Q8N7A1_domains_canonical_isoform_compared.csv
+Domains lost: Kelch motif 2
+Domains gained: Galactose oxidase, central domain 1
+KTN1_Q86UP2_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+KCRU_P12532_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+SNX1_Q13596_domains_canonical_isoform_compared.csv
+Domains lost: BAR/IMD domain-like 1
+Domains lost: PX domain 1
+Domains gained:  
+HACD3_Q9P035_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+NEIL1_Q96FI4_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+KPBB_Q93100_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+KCAB2_Q13303_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+CMTA1_Q9Y6Y1_domains_canonical_isoform_compared.csv
+Domains lost: Ankyrin repeat 1
+Domains lost: E set domains 1
+Domains lost: P-loop containing nucleoside triphosphate hydrolases 1
+Domains gained:  
+WDTC1_Q8N5D0_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+TM39B_Q9GZU3_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+GDE_P35573_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+FPPS_P14324_domains_canonical_isoform_compared.csv
+Domains lost: Terpenoid synthases 1
+Domains gained:  
+SYT11_Q9BT88_domains_canonical_isoform_compared.csv
+Domains lost: C2 domain (Calcium/lipid-binding domain, CaLB) 2
+Domains gained:  
+CE350_Q5VT06_domains_canonical_isoform_compared.csv
+Domains lost: Cap-Gly domain 1
+Domains gained:  
+KCTD3_Q9Y597_domains_canonical_isoform_compared.csv
+Domains lost: WD40 repeat-like 1
+Domains gained:  
+F149B_Q96BN6_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+SAC2_Q9Y2H2_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+RTN3_O95197_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+DPP3_Q9NY33_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+RBM4_Q9BWF3_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+NEUR3_Q9UQ49_domains_canonical_isoform_compared.csv
+Domains lost: Sialidases 1
+Domains gained:  
+AAMDC_Q9H7C9_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+ABCG4_Q9H172_domains_canonical_isoform_compared.csv
+Domains lost: P-loop containing nucleoside triphosphate hydrolases 1
+Domains gained:  
+DNM1L_O00429_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+DIP2B_Q9P265_domains_canonical_isoform_compared.csv
+Domains lost: Acetyl-CoA synthetase-like 1
+Domains gained:  
+DGKA_P23743_domains_canonical_isoform_compared.csv
+Domains lost: NAD kinase/diacylglycerol kinase-like 1
+Domains gained:  
+PLBL2_Q8NHP8_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+GL1D1_Q96MS3_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+BORA_Q6PGQ7_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+CDC16_Q13042_domains_canonical_isoform_compared.csv
+Domains lost:  
+Domains gained: HCP-like 1
+LRFN5_Q96NI6_domains_canonical_isoform_compared.csv
+Domains lost: Fibronectin type III 1
+Domains gained:  
+KLDC1_Q8N7A1_domains_canonical_isoform_compared.csv
+Domains lost: Kelch motif 2
+Domains gained: Galactose oxidase, central domain 1
+KTN1_Q86UP2_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+KCRU_P12532_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+SNX1_Q13596_domains_canonical_isoform_compared.csv
+Domains lost: BAR/IMD domain-like 1
+Domains lost: PX domain 1
+Domains gained:  
+HACD3_Q9P035_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+NEIL1_Q96FI4_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+KPBB_Q93100_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+KCAB2_Q13303_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+CMTA1_Q9Y6Y1_domains_canonical_isoform_compared.csv
+Domains lost: Ankyrin repeat 1
+Domains lost: E set domains 1
+Domains lost: P-loop containing nucleoside triphosphate hydrolases 1
+Domains gained:  
+WDTC1_Q8N5D0_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+TM39B_Q9GZU3_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+GDE_P35573_domains_canonical_isoform_compared.csv
+No domains have been gained or lost in this novel isoform.
+FPPS_P14324_domains_canonical_isoform_compared.csv
+Domains lost: Terpenoid synthases 1
+Domains gained:  
+SYT11_Q9BT88_domains_canonical_isoform_compared.csv
+Domains lost: C2 domain (Calcium/lipid-binding domain, CaLB) 2
+Domains gained:  
+CE350_Q5VT06_domains_canonical_isoform_compared.csv
+Domains lost: Cap-Gly domain 1
+Domains gained:  
+KCTD3_Q9Y597_domains_canonical_isoform_compared.csv
+Domains lost: WD40 repeat-like 1
+Domains gained:  
+F149B_Q96BN6_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+SAC2_Q9Y2H2_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+RTN3_O95197_domains_canonical_isoform_compared.csv
+There were no domains identified in the canonical sequence by the SUPERFAMILY tool.
+No domains have been gained or lost in this novel isoform.
+DPP3_Q9NY33_domains_canonical_isoform_compared.csv

@@ -1,0 +1,5 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","RBM4_canonical","RNA-binding domain, RBD","3-75",1.29e-21
+"2","RBM4_canonical","RNA-binding domain, RBD","75-170",4.43e-25
+"3","RBM4_isoform","RNA-binding domain, RBD","3-75",2.96e-22
+"4","RBM4_isoform","RNA-binding domain, RBD","74-139",1.48e-20

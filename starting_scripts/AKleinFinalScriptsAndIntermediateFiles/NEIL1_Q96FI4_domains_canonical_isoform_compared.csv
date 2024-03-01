@@ -1,0 +1,7 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","NEIL1_canonical","N-terminal domain of MutM-like DNA repair proteins","2-130",9.42e-31
+"2","NEIL1_canonical","S13-like H2TH domain","133-244",1.03e-27
+"3","NEIL1_canonical","Glucocorticoid receptor-like (DNA-binding domain)","248-290",6.13e-19
+"4","NEIL1_isoform","N-terminal domain of MutM-like DNA repair proteins","2-130",1.07e-30
+"5","NEIL1_isoform","S13-like H2TH domain","171-270",9.27e-24
+"6","NEIL1_isoform","Glucocorticoid receptor-like (DNA-binding domain)","274-316",6.7e-19

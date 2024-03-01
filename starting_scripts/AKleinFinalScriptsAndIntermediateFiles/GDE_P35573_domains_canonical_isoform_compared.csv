@@ -1,0 +1,9 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","GDE_canonical","(Trans)glycosidases","119-253",3.58e-40
+"2","GDE_canonical","(Trans)glycosidases","458-702",3.58e-40
+"3","GDE_canonical","Six-hairpin glycosidases","1085-1190",6.53e-51
+"4","GDE_canonical","Six-hairpin glycosidases","1252-1532",6.53e-51
+"5","GDE_isoform","(Trans)glycosidases","119-253",3.58e-40
+"6","GDE_isoform","(Trans)glycosidases","458-702",3.58e-40
+"7","GDE_isoform","Six-hairpin glycosidases","1085-1190",7.58e-43
+"8","GDE_isoform","Six-hairpin glycosidases","1252-1472",7.58e-43

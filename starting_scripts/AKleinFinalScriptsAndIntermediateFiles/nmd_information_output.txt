@@ -1,0 +1,286 @@
+CMTA1_Q9Y6Y1_can_iso_seqs.fasta
+CMTA1 Intron position: 6780 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 6659 nucleotides away, and therefore is a potential NMD candidate.
+TM39B_Q9GZU3_can_iso_seqs.fasta
+TM39B Intron position: 1398 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 239 nucleotides away, and therefore is a potential NMD candidate.
+FPPS_P14324_can_iso_seqs.fasta
+FPPS Intron position: 1254 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 836 nucleotides away, and therefore is a potential NMD candidate.
+SYT11_Q9BT88_can_iso_seqs.fasta
+SYT11 Intron position: 1195 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1134 nucleotides away, and therefore is a potential NMD candidate.
+CE350_Q5VT06_can_iso_seqs.fasta
+CE350 Intron position: 9678 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 4760 nucleotides away, and therefore is a potential NMD candidate.
+KCTD3_Q9Y597_can_iso_seqs.fasta
+KCTD3 Intron position: 2111 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 523 nucleotides away, and therefore is a potential NMD candidate.
+F149B_Q96BN6_can_iso_seqs.fasta
+F149B Intron position: 1756 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 828 nucleotides away, and therefore is a potential NMD candidate.
+SAC2_Q9Y2H2_can_iso_seqs.fasta
+SAC2 Intron position: 3341 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 3013 nucleotides away, and therefore is a potential NMD candidate.
+RTN3_O95197_can_iso_seqs.fasta
+RTN3 Intron position: 3149 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2896 nucleotides away, and therefore is a potential NMD candidate.
+DPP3_Q9NY33_can_iso_seqs.fasta
+DPP3 Intron position: NA Strand: +
+DPP3 did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+RBM4_Q9BWF3_can_iso_seqs.fasta
+RBM4 Intron position: 436 Strand: +
+The position of the final exon-exon junction is before the PTC position. Therefore, this isoform is not a potential NMD candidate.
+NEUR3_Q9UQ49_can_iso_seqs.fasta
+NEUR3 Intron position: 357 Strand: +
+The position of the final exon-exon junction is before the PTC position. Therefore, this isoform is not a potential NMD candidate.
+AAMDC_Q9H7C9_can_iso_seqs.fasta
+AAMDC Intron position: 261 Strand: +
+The position of the final exon-exon junction is before the PTC position. Therefore, this isoform is not a potential NMD candidate.
+ABCG4_Q9H172_can_iso_seqs.fasta
+ABCG4 Intron position: 2573 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2332 nucleotides away, and therefore is a potential NMD candidate.
+DNM1L_O00429_can_iso_seqs.fasta
+DNM1L Intron position: NA Strand: +
+DNM1L did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+DIP2B_Q9P265_can_iso_seqs.fasta
+DIP2B Intron position: 7082 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 4312 nucleotides away, and therefore is a potential NMD candidate.
+DGKA_P23743_can_iso_seqs.fasta
+DGKA Intron position: 3945 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2414 nucleotides away, and therefore is a potential NMD candidate.
+PLBL2_Q8NHP8_can_iso_seqs.fasta
+PLBL2 Intron position: 1890 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1478 nucleotides away, and therefore is a potential NMD candidate.
+BORA_Q6PGQ7_can_iso_seqs.fasta
+BORA Intron position: 2022 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1631 nucleotides away, and therefore is a potential NMD candidate.
+CDC16_Q13042_can_iso_seqs.fasta
+CDC16 Intron position: 3787 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2178 nucleotides away, and therefore is a potential NMD candidate.
+LRFN5_Q96NI6_can_iso_seqs.fasta
+LRFN5 Intron position: 2214 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 719 nucleotides away, and therefore is a potential NMD candidate.
+KLDC1_Q8N7A1_can_iso_seqs.fasta
+KLDC1 Intron position: 1061 Strand: +
+The premature stop codon (PTC) is less than 55 nucleotides away from the final exon-exon junction. The PTC is 16 nucleotides away, and therefore is not a potential NMD candidate.
+KTN1_Q86UP2_can_iso_seqs.fasta
+KTN1 Intron position: NA Strand: +
+KTN1 did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+KCRU_P12532_can_iso_seqs.fasta
+KCRU Intron position: NA Strand: +
+KCRU did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+SNX1_Q13596_can_iso_seqs.fasta
+SNX1 Intron position: NA Strand: +
+SNX1 did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+HACD3_Q9P035_can_iso_seqs.fasta
+HACD3 Intron position: 1507 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1365 nucleotides away, and therefore is a potential NMD candidate.
+CMTA1_Q9Y6Y1_can_iso_seqs.fasta
+CMTA1 Intron position: 6780 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 6659 nucleotides away, and therefore is a potential NMD candidate.
+TM39B_Q9GZU3_can_iso_seqs.fasta
+TM39B Intron position: 1398 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 239 nucleotides away, and therefore is a potential NMD candidate.
+FPPS_P14324_can_iso_seqs.fasta
+FPPS Intron position: 1254 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 836 nucleotides away, and therefore is a potential NMD candidate.
+SYT11_Q9BT88_can_iso_seqs.fasta
+SYT11 Intron position: 1195 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1134 nucleotides away, and therefore is a potential NMD candidate.
+CE350_Q5VT06_can_iso_seqs.fasta
+CE350 Intron position: 9678 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 4760 nucleotides away, and therefore is a potential NMD candidate.
+KCTD3_Q9Y597_can_iso_seqs.fasta
+KCTD3 Intron position: 2111 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 523 nucleotides away, and therefore is a potential NMD candidate.
+F149B_Q96BN6_can_iso_seqs.fasta
+F149B Intron position: 1756 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 828 nucleotides away, and therefore is a potential NMD candidate.
+SAC2_Q9Y2H2_can_iso_seqs.fasta
+SAC2 Intron position: 3341 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 3013 nucleotides away, and therefore is a potential NMD candidate.
+RTN3_O95197_can_iso_seqs.fasta
+RTN3 Intron position: 3149 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2896 nucleotides away, and therefore is a potential NMD candidate.
+DPP3_Q9NY33_can_iso_seqs.fasta
+DPP3 Intron position: NA Strand: +
+DPP3 did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+RBM4_Q9BWF3_can_iso_seqs.fasta
+RBM4 Intron position: 436 Strand: +
+The position of the final exon-exon junction is before the PTC position. Therefore, this isoform is not a potential NMD candidate.
+NEUR3_Q9UQ49_can_iso_seqs.fasta
+NEUR3 Intron position: 357 Strand: +
+The position of the final exon-exon junction is before the PTC position. Therefore, this isoform is not a potential NMD candidate.
+AAMDC_Q9H7C9_can_iso_seqs.fasta
+AAMDC Intron position: 261 Strand: +
+The position of the final exon-exon junction is before the PTC position. Therefore, this isoform is not a potential NMD candidate.
+ABCG4_Q9H172_can_iso_seqs.fasta
+ABCG4 Intron position: 2573 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2332 nucleotides away, and therefore is a potential NMD candidate.
+DNM1L_O00429_can_iso_seqs.fasta
+DNM1L Intron position: NA Strand: +
+DNM1L did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+DIP2B_Q9P265_can_iso_seqs.fasta
+DIP2B Intron position: 7082 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 4312 nucleotides away, and therefore is a potential NMD candidate.
+DGKA_P23743_can_iso_seqs.fasta
+DGKA Intron position: 3945 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2414 nucleotides away, and therefore is a potential NMD candidate.
+PLBL2_Q8NHP8_can_iso_seqs.fasta
+PLBL2 Intron position: 1890 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1478 nucleotides away, and therefore is a potential NMD candidate.
+BORA_Q6PGQ7_can_iso_seqs.fasta
+BORA Intron position: 2022 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1631 nucleotides away, and therefore is a potential NMD candidate.
+CDC16_Q13042_can_iso_seqs.fasta
+CDC16 Intron position: 3787 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2178 nucleotides away, and therefore is a potential NMD candidate.
+LRFN5_Q96NI6_can_iso_seqs.fasta
+LRFN5 Intron position: 2214 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 719 nucleotides away, and therefore is a potential NMD candidate.
+KLDC1_Q8N7A1_can_iso_seqs.fasta
+KLDC1 Intron position: 1061 Strand: +
+The premature stop codon (PTC) is less than 55 nucleotides away from the final exon-exon junction. The PTC is 16 nucleotides away, and therefore is not a potential NMD candidate.
+KTN1_Q86UP2_can_iso_seqs.fasta
+KTN1 Intron position: NA Strand: +
+KTN1 did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+KCRU_P12532_can_iso_seqs.fasta
+KCRU Intron position: NA Strand: +
+KCRU did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+SNX1_Q13596_can_iso_seqs.fasta
+SNX1 Intron position: NA Strand: +
+SNX1 did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+HACD3_Q9P035_can_iso_seqs.fasta
+HACD3 Intron position: 1507 Strand: +
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1365 nucleotides away, and therefore is a potential NMD candidate.
+CMTA1_Q9Y6Y1_can_iso_seqs.fasta
+CMTA1 Intron position: 6780 Strand: +
+Nucleotides in canonical sequence: 5019
+Nucleotides in isoform sequence: 5019
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 6659 nucleotides away, and therefore is a potential NMD candidate.
+TM39B_Q9GZU3_can_iso_seqs.fasta
+TM39B Intron position: 1398 Strand: +
+Nucleotides in canonical sequence: 1440
+Nucleotides in isoform sequence: 1440
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 239 nucleotides away, and therefore is a potential NMD candidate.
+FPPS_P14324_can_iso_seqs.fasta
+FPPS Intron position: 1254 Strand: +
+Nucleotides in canonical sequence: 1257
+Nucleotides in isoform sequence: 1257
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 836 nucleotides away, and therefore is a potential NMD candidate.
+SYT11_Q9BT88_can_iso_seqs.fasta
+SYT11 Intron position: 1195 Strand: +
+Nucleotides in canonical sequence: 1260
+Nucleotides in isoform sequence: 1260
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1134 nucleotides away, and therefore is a potential NMD candidate.
+CE350_Q5VT06_can_iso_seqs.fasta
+CE350 Intron position: 9678 Strand: +
+Nucleotides in canonical sequence: 9351
+Nucleotides in isoform sequence: 9351
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 4760 nucleotides away, and therefore is a potential NMD candidate.
+KCTD3_Q9Y597_can_iso_seqs.fasta
+KCTD3 Intron position: 2111 Strand: +
+Nucleotides in canonical sequence: 2445
+Nucleotides in isoform sequence: 2445
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 523 nucleotides away, and therefore is a potential NMD candidate.
+F149B_Q96BN6_can_iso_seqs.fasta
+F149B Intron position: 1756 Strand: +
+Nucleotides in canonical sequence: 1746
+Nucleotides in isoform sequence: 1746
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 828 nucleotides away, and therefore is a potential NMD candidate.
+SAC2_Q9Y2H2_can_iso_seqs.fasta
+SAC2 Intron position: 3341 Strand: +
+Nucleotides in canonical sequence: 3396
+Nucleotides in isoform sequence: 3396
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 3013 nucleotides away, and therefore is a potential NMD candidate.
+RTN3_O95197_can_iso_seqs.fasta
+RTN3 Intron position: 3149 Strand: +
+Nucleotides in canonical sequence: 3096
+Nucleotides in isoform sequence: 3096
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2896 nucleotides away, and therefore is a potential NMD candidate.
+DPP3_Q9NY33_can_iso_seqs.fasta
+DPP3 Intron position: NA Strand: +
+Nucleotides in canonical sequence: 2211
+Nucleotides in isoform sequence: 2211
+DPP3 did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+RBM4_Q9BWF3_can_iso_seqs.fasta
+RBM4 Intron position: 436 Strand: +
+Nucleotides in canonical sequence: 1092
+Nucleotides in isoform sequence: 1092
+The position of the final exon-exon junction is before the PTC position. Therefore, this isoform is not a potential NMD candidate.
+NEUR3_Q9UQ49_can_iso_seqs.fasta
+NEUR3 Intron position: 357 Strand: +
+Nucleotides in canonical sequence: 1284
+Nucleotides in isoform sequence: 1284
+The position of the final exon-exon junction is before the PTC position. Therefore, this isoform is not a potential NMD candidate.
+AAMDC_Q9H7C9_can_iso_seqs.fasta
+AAMDC Intron position: 261 Strand: +
+Nucleotides in canonical sequence: 366
+Nucleotides in isoform sequence: 366
+The position of the final exon-exon junction is before the PTC position. Therefore, this isoform is not a potential NMD candidate.
+ABCG4_Q9H172_can_iso_seqs.fasta
+ABCG4 Intron position: 2573 Strand: +
+Nucleotides in canonical sequence: 1938
+Nucleotides in isoform sequence: 1938
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2332 nucleotides away, and therefore is a potential NMD candidate.
+DNM1L_O00429_can_iso_seqs.fasta
+DNM1L Intron position: NA Strand: +
+Nucleotides in canonical sequence: 2208
+Nucleotides in isoform sequence: 2208
+DNM1L did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+DIP2B_Q9P265_can_iso_seqs.fasta
+DIP2B Intron position: 7082 Strand: +
+Nucleotides in canonical sequence: 4728
+Nucleotides in isoform sequence: 4728
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 4312 nucleotides away, and therefore is a potential NMD candidate.
+DGKA_P23743_can_iso_seqs.fasta
+DGKA Intron position: 3945 Strand: +
+Nucleotides in canonical sequence: 2205
+Nucleotides in isoform sequence: 2205
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2414 nucleotides away, and therefore is a potential NMD candidate.
+PLBL2_Q8NHP8_can_iso_seqs.fasta
+PLBL2 Intron position: 1890 Strand: +
+Nucleotides in canonical sequence: 1767
+Nucleotides in isoform sequence: 1767
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1478 nucleotides away, and therefore is a potential NMD candidate.
+BORA_Q6PGQ7_can_iso_seqs.fasta
+BORA Intron position: 2022 Strand: +
+Nucleotides in canonical sequence: 1677
+Nucleotides in isoform sequence: 1677
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1631 nucleotides away, and therefore is a potential NMD candidate.
+CDC16_Q13042_can_iso_seqs.fasta
+CDC16 Intron position: 3787 Strand: +
+Nucleotides in canonical sequence: 1860
+Nucleotides in isoform sequence: 1860
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 2178 nucleotides away, and therefore is a potential NMD candidate.
+LRFN5_Q96NI6_can_iso_seqs.fasta
+LRFN5 Intron position: 2214 Strand: +
+Nucleotides in canonical sequence: 2157
+Nucleotides in isoform sequence: 2157
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 719 nucleotides away, and therefore is a potential NMD candidate.
+KLDC1_Q8N7A1_can_iso_seqs.fasta
+KLDC1 Intron position: 1061 Strand: +
+Nucleotides in canonical sequence: 1218
+Nucleotides in isoform sequence: 1218
+The premature stop codon (PTC) is less than 55 nucleotides away from the final exon-exon junction. The PTC is 16 nucleotides away, and therefore is not a potential NMD candidate.
+KTN1_Q86UP2_can_iso_seqs.fasta
+KTN1 Intron position: NA Strand: +
+Nucleotides in canonical sequence: 4071
+Nucleotides in isoform sequence: 4071
+KTN1 did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+KCRU_P12532_can_iso_seqs.fasta
+KCRU Intron position: NA Strand: +
+Nucleotides in canonical sequence: 1251
+Nucleotides in isoform sequence: 1251
+KCRU did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+SNX1_Q13596_can_iso_seqs.fasta
+SNX1 Intron position: NA Strand: +
+Nucleotides in canonical sequence: 1566
+Nucleotides in isoform sequence: 1566
+SNX1 did not have junction information available at this time. The potential for this isoform to be an NMD candidate is TBD.
+HACD3_Q9P035_can_iso_seqs.fasta
+HACD3 Intron position: 1507 Strand: +
+Nucleotides in canonical sequence: 1086
+Nucleotides in isoform sequence: 1086
+The premature stop codon (PTC) is greater than 55 nucleotides away from the final exon-exon junction. The PTC is 1365 nucleotides away, and therefore is a potential NMD candidate.

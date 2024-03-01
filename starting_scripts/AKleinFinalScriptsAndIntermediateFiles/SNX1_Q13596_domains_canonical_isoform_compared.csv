@@ -1,0 +1,4 @@
+"","Protein_name","Domains","Match_region","E.value"
+"1","SNX1_canonical","PX domain","140-269",5.1e-32
+"2","SNX1_canonical","BAR/IMD domain-like","309-520",1.96e-06
+"3","SNX1_isoform",NA,NA,NA
