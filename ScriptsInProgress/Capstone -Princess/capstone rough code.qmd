@@ -1,0 +1,69 @@
+---
+title: "Finding Novel Exons by Princess Kuteyi"
+format: html
+editor: visual
+---
+
+## Finding Novel Exons
+
+The beginning portion of this script is to load the packages needed and also loading the data for the analysis.
+
+```{r}
+library(GenomicRanges)
+library(rtracklayer)
+library(Repitools)
+library(DESeq2)
+
+```
+
+## Downloading BiocManager and Recount3
+
+Using Bioconductor and Recount3 is essential for this project so the first step is to download them.
+
+```{r}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("recount3")
+BiocManager::install("snapcount")
+BiocManager::install("Repitools")
+library("recount3")
+library("snapcount")
+```
+
+Find available projects to utilize. The focus is human samples.
+
+```{r}
+human_projects <- available_projects()
+dim(human_projects)
+head(human_projects)
+```
+
+Pick the project and sample to analyze.
+
+```{r}
+# subset the project of interest
+ potential_info <- subset(
+ human_projects,
+   project == "SRP107565" & project_type == "data_sources"
+)
+ 
+potential_info
+
+```
+
+```{r}
+# utilize gtext as the file source
+subset(human_projects, file_source == "gtex" & project_type == "data_sources")
+```
+
+```{r}
+rse_gene_SRP107565 <- create_rse(potential_info)
+rse_gene_SRP107565
+metadata(rse_gene_SRP107565)
+
+```
+
+```{r}
+dim(rse_gene_SRP107565)
+rowRanges(rse_gene_SRP107565)
+```
