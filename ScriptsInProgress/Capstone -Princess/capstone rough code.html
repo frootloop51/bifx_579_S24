@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Princess Kuteyi">
 
-<title>Finding Novel Exons by Princess Kuteyi</title>
+<title>Tool 1B Novel Exon Workflow</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,13 +80,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Finding Novel Exons by Princess Kuteyi</h1>
+<h1 class="title">Tool 1B Novel Exon Workflow</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Princess Kuteyi </p>
+          </div>
+  </div>
     
   
     
@@ -95,7 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <section id="finding-novel-exons" class="level2">
-<h2 class="anchored" data-anchor-id="finding-novel-exons">Finding Novel Exons</h2>
+<h2 class="anchored" data-anchor-id="finding-novel-exons"><sub>Finding&nbsp;Novel&nbsp;Exons</sub></h2>
 <p>The beginning portion of this script is to load the packages needed and also loading the data for the analysis.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GenomicRanges)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -151,7 +158,7 @@ Attaching package: 'S4Vectors'</code></pre>
 <pre><code>Loading required package: GenomeInfoDb</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'GenomeInfoDb' was built under R version 4.3.2</code></pre>
+<pre><code>Warning: package 'GenomeInfoDb' was built under R version 4.3.3</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rtracklayer)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Repitools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -165,6 +172,9 @@ Attaching package: 'Repitools'</code></pre>
     blocks</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DESeq2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'DESeq2' was built under R version 4.3.3</code></pre>
+</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: SummarizedExperiment</code></pre>
 </div>
@@ -227,12 +237,12 @@ Attaching package: 'Biobase'</code></pre>
 </div>
 </section>
 <section id="downloading-biocmanager-and-recount3" class="level2">
-<h2 class="anchored" data-anchor-id="downloading-biocmanager-and-recount3">Downloading BiocManager and Recount3</h2>
+<h2 class="anchored" data-anchor-id="downloading-biocmanager-and-recount3"><sup>Downloading&nbsp;BiocManager&nbsp;and&nbsp;Recount3</sup></h2>
 <p>Using Bioconductor and Recount3 is essential for this project so the first step is to download them.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"BiocManager"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"recount3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"BiocManager"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"recount3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Bioconductor version 3.18 (BiocManager 1.30.22), R 4.3.1 (2023-06-16)</code></pre>
 </div>
@@ -241,12 +251,10 @@ Attaching package: 'Biobase'</code></pre>
   `force = TRUE` to re-install: 'recount3'</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Old packages: 'Biostrings', 'dbplyr', 'DESeq2', 'digest', 'GenomeInfoDb',
-  'GenomicFeatures', 'ggsci', 'globals', 'Hmisc', 'igraph', 'lattice',
-  'multcompView', 'pkgbuild', 'processx', 'ragg', 'remotes', 'S4Arrays',
-  'sass', 'systemfonts', 'tidyselect', 'tinytex', 'tm', 'zlibbioc'</code></pre>
+<pre><code>Old packages: 'callr', 'future', 'future.apply', 'ggsci', 'gh', 'htmltools',
+  'httpuv', 'lme4', 'shiny', 'xfun'</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"snapcount"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"snapcount"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Bioconductor version 3.18 (BiocManager 1.30.22), R 4.3.1 (2023-06-16)</code></pre>
 </div>
@@ -255,12 +263,10 @@ Attaching package: 'Biobase'</code></pre>
   `force = TRUE` to re-install: 'snapcount'</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Old packages: 'Biostrings', 'dbplyr', 'DESeq2', 'digest', 'GenomeInfoDb',
-  'GenomicFeatures', 'ggsci', 'globals', 'Hmisc', 'igraph', 'lattice',
-  'multcompView', 'pkgbuild', 'processx', 'ragg', 'remotes', 'S4Arrays',
-  'sass', 'systemfonts', 'tidyselect', 'tinytex', 'tm', 'zlibbioc'</code></pre>
+<pre><code>Old packages: 'callr', 'future', 'future.apply', 'ggsci', 'gh', 'htmltools',
+  'httpuv', 'lme4', 'shiny', 'xfun'</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"Repitools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"Repitools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Bioconductor version 3.18 (BiocManager 1.30.22), R 4.3.1 (2023-06-16)</code></pre>
 </div>
@@ -269,31 +275,41 @@ Attaching package: 'Biobase'</code></pre>
   `force = TRUE` to re-install: 'Repitools'</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Old packages: 'Biostrings', 'dbplyr', 'DESeq2', 'digest', 'GenomeInfoDb',
-  'GenomicFeatures', 'ggsci', 'globals', 'Hmisc', 'igraph', 'lattice',
-  'multcompView', 'pkgbuild', 'processx', 'ragg', 'remotes', 'S4Arrays',
-  'sass', 'systemfonts', 'tidyselect', 'tinytex', 'tm', 'zlibbioc'</code></pre>
+<pre><code>Old packages: 'callr', 'future', 'future.apply', 'ggsci', 'gh', 'htmltools',
+  'httpuv', 'lme4', 'shiny', 'xfun'</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"recount3"</span>)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"snapcount"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"GenomeInfoDb"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Bioconductor version 3.18 (BiocManager 1.30.22), R 4.3.1 (2023-06-16)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package(s) not installed when version(s) same as or greater than current; use
+  `force = TRUE` to re-install: 'GenomeInfoDb'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Old packages: 'callr', 'future', 'future.apply', 'ggsci', 'gh', 'htmltools',
+  'httpuv', 'lme4', 'shiny', 'xfun'</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"recount3"</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"snapcount"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Find available projects to utilize. The focus is human samples.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>human_projects <span class="ot">&lt;-</span> <span class="fu">available_projects</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>projects <span class="ot">&lt;-</span> <span class="fu">available_projects</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:50.385019 caching file sra.recount_project.MD.gz.</code></pre>
+<pre><code>2024-03-28 17:15:14.775545 caching file sra.recount_project.MD.gz.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:50.681811 caching file gtex.recount_project.MD.gz.</code></pre>
+<pre><code>2024-03-28 17:15:15.077217 caching file gtex.recount_project.MD.gz.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:50.935126 caching file tcga.recount_project.MD.gz.</code></pre>
+<pre><code>2024-03-28 17:15:15.368649 caching file tcga.recount_project.MD.gz.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(human_projects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(projects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8742    6</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(human_projects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(projects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    project organism file_source     project_home project_type n_samples
 1 SRP107565    human         sra data_sources/sra data_sources       216
@@ -306,21 +322,21 @@ Attaching package: 'Biobase'</code></pre>
 </div>
 <p>Pick the project and sample to analyze.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset the project of interest</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a> potential_info <span class="ot">&lt;-</span> <span class="fu">subset</span>(</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a> human_projects,</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>   project <span class="sc">==</span> <span class="st">"SRP107565"</span> <span class="sc">&amp;</span> project_type <span class="sc">==</span> <span class="st">"data_sources"</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>potential_info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset the project of interest</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a> potential_info <span class="ot">&lt;-</span> <span class="fu">subset</span>(</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a> projects,</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>   project <span class="sc">==</span> <span class="st">"SRP107565"</span> <span class="sc">&amp;</span> project_type <span class="sc">==</span> <span class="st">"data_sources"</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>potential_info</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    project organism file_source     project_home project_type n_samples
 1 SRP107565    human         sra data_sources/sra data_sources       216</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># utilize gtext as the file source</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(human_projects, file_source <span class="sc">==</span> <span class="st">"gtex"</span> <span class="sc">&amp;</span> project_type <span class="sc">==</span> <span class="st">"data_sources"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># utilize gtext as the file source</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(projects, file_source <span class="sc">==</span> <span class="st">"gtex"</span> <span class="sc">&amp;</span> project_type <span class="sc">==</span> <span class="st">"data_sources"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             project organism file_source      project_home project_type
 8678  ADIPOSE_TISSUE    human        gtex data_sources/gtex data_sources
@@ -391,21 +407,22 @@ Attaching package: 'Biobase'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>rse_gene_SRP107565 <span class="ot">&lt;-</span> <span class="fu">create_rse</span>(potential_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#looking at the metadata to find the description of the gene and where it is from and how to rse object was created</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>rse_gene_SRP107565 <span class="ot">&lt;-</span> <span class="fu">create_rse</span>(potential_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:52.865628 downloading and reading the metadata.</code></pre>
+<pre><code>2024-03-28 17:15:17.900659 downloading and reading the metadata.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:53.092224 caching file sra.sra.SRP107565.MD.gz.</code></pre>
+<pre><code>2024-03-28 17:15:18.179212 caching file sra.sra.SRP107565.MD.gz.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:53.357173 caching file sra.recount_project.SRP107565.MD.gz.</code></pre>
+<pre><code>2024-03-28 17:15:18.523595 caching file sra.recount_project.SRP107565.MD.gz.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:53.652025 caching file sra.recount_qc.SRP107565.MD.gz.</code></pre>
+<pre><code>2024-03-28 17:15:18.765635 caching file sra.recount_qc.SRP107565.MD.gz.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:53.916591 caching file sra.recount_seq_qc.SRP107565.MD.gz.</code></pre>
+<pre><code>2024-03-28 17:15:19.04754 caching file sra.recount_seq_qc.SRP107565.MD.gz.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The 'url'
@@ -413,21 +430,21 @@ Attaching package: 'Biobase'</code></pre>
 does not exist or is not available.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:54.443405 downloading and reading the feature information.</code></pre>
+<pre><code>2024-03-28 17:15:19.318816 downloading and reading the feature information.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:54.674833 caching file human.gene_sums.G026.gtf.gz.</code></pre>
+<pre><code>2024-03-28 17:15:19.559733 caching file human.gene_sums.G026.gtf.gz.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:54.985671 downloading and reading the counts: 216 samples across 63856 features.</code></pre>
+<pre><code>2024-03-28 17:15:19.880862 downloading and reading the counts: 216 samples across 63856 features.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:55.203191 caching file sra.gene_sums.SRP107565.G026.gz.</code></pre>
+<pre><code>2024-03-28 17:15:20.117204 caching file sra.gene_sums.SRP107565.G026.gz.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>2024-03-21 17:26:57.014823 constructing the RangedSummarizedExperiment (rse) object.</code></pre>
+<pre><code>2024-03-28 17:15:21.681828 constructing the RangedSummarizedExperiment (rse) object.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>rse_gene_SRP107565</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>rse_gene_SRP107565</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>class: RangedSummarizedExperiment 
 dim: 63856 216 
@@ -440,10 +457,10 @@ colnames(216): SRR5579425 SRR5579426 ... SRR5579421 SRR5579422
 colData names(168): rail_id external_id ... recount_seq_qc.errq
   BigWigURL</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">metadata</span>(rse_gene_SRP107565)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">metadata</span>(rse_gene_SRP107565)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$time_created
-[1] "2024-03-21 17:26:57 EDT"
+[1] "2024-03-28 17:15:21 EDT"
 
 $recount3_version
           package ondiskversion loadedversion
@@ -477,11 +494,13 @@ $recount3_url
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(rse_gene_SRP107565)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dim function provides the number of genes by the number of samples</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(rse_gene_SRP107565)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 63856   216</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowRanges</span>(rse_gene_SRP107565)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co">#row ranges shows the range of the gene along with the chromosome locations</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rowRanges</span>(rse_gene_SRP107565)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>GRanges object with 63856 ranges and 10 metadata columns:
                              seqnames            ranges strand |   source
@@ -536,6 +555,225 @@ $recount3_url
    ENSG00000270726.6_PAR_Y OTTHUMG00000184987.2         PAR
   ENSG00000182484.15_PAR_Y OTTHUMG00000022677.5         PAR
    ENSG00000227159.8_PAR_Y OTTHUMG00000022678.1         PAR
+  -------
+  seqinfo: 374 sequences from an unspecified genome; no seqlengths</code></pre>
+</div>
+</div>
+<p>In order to get more in depth information on the gene, these next steps will expand the information and attributes of the gene and also provided the URL for the big wig files.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>rse_gene_human_expanded <span class="ot">&lt;-</span> <span class="fu">expand_sra_attributes</span>(rse_gene_SRP107565)</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colData</span>(rse_gene_human_expanded)[, <span class="fu">ncol</span>(<span class="fu">colData</span>(rse_gene_SRP107565))<span class="sc">:</span><span class="fu">ncol</span>(<span class="fu">colData</span>(rse_gene_human_expanded))]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>DataFrame with 216 rows and 6 columns
+                        BigWigURL sra_attribute.agent sra_attribute.cell_line
+                      &lt;character&gt;         &lt;character&gt;             &lt;character&gt;
+SRR5579425 http://duffel.rail.b..         Abemaciclib                    BT20
+SRR5579426 http://duffel.rail.b..         Abemaciclib                    BT20
+SRR5579433 http://duffel.rail.b..         Palbociclib                    BT20
+SRR5579434 http://duffel.rail.b..         Palbociclib                    BT20
+SRR5579435 http://duffel.rail.b..          Ribociclib                    BT20
+...                           ...                 ...                     ...
+SRR5579418 http://duffel.rail.b..         Palbociclib                    T47D
+SRR5579419 http://duffel.rail.b..          Ribociclib                    T47D
+SRR5579420 http://duffel.rail.b..          Ribociclib                    T47D
+SRR5579421 http://duffel.rail.b..          Ribociclib                    T47D
+SRR5579422 http://duffel.rail.b..          Ribociclib                    T47D
+           sra_attribute.dose sra_attribute.source_name sra_attribute.time
+                  &lt;character&gt;               &lt;character&gt;        &lt;character&gt;
+SRR5579425             0.3 uM    BT20 breast cancer c..               6 hr
+SRR5579426             0.3 uM    BT20 breast cancer c..               6 hr
+SRR5579433               3 uM    BT20 breast cancer c..               6 hr
+SRR5579434               3 uM    BT20 breast cancer c..               6 hr
+SRR5579435             0.3 uM    BT20 breast cancer c..               6 hr
+...                       ...                       ...                ...
+SRR5579418               3 uM    T47D breast cancer c..              24 hr
+SRR5579419             0.3 uM    T47D breast cancer c..              24 hr
+SRR5579420             0.3 uM    T47D breast cancer c..              24 hr
+SRR5579421               3 uM    T47D breast cancer c..              24 hr
+SRR5579422               3 uM    T47D breast cancer c..              24 hr</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating the rse data for the exons. </span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>rse_exon_SRP107565 <span class="ot">&lt;-</span> <span class="fu">create_rse</span>(</span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>    potential_info,</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">"exon"</span></span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2024-03-28 17:15:21.761442 downloading and reading the metadata.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2024-03-28 17:15:22.080064 caching file sra.sra.SRP107565.MD.gz.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2024-03-28 17:15:22.339672 caching file sra.recount_project.SRP107565.MD.gz.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2024-03-28 17:15:22.569481 caching file sra.recount_qc.SRP107565.MD.gz.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2024-03-28 17:15:22.856285 caching file sra.recount_seq_qc.SRP107565.MD.gz.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The 'url'
+&lt;http://duffel.rail.bio/recount3/human/data_sources/sra/metadata/65/SRP107565/sra.recount_pred.SRP107565.MD.gz&gt;
+does not exist or is not available.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2024-03-28 17:15:23.124162 downloading and reading the feature information.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2024-03-28 17:15:23.358779 caching file human.exon_sums.G026.gtf.gz.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2024-03-28 17:15:37.075194 downloading and reading the counts: 216 samples across 1299686 features.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2024-03-28 17:15:37.497889 caching file sra.exon_sums.SRP107565.G026.gz.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>2024-03-28 17:15:53.683999 constructing the RangedSummarizedExperiment (rse) object.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>rse_exon_SRP107565</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class: RangedSummarizedExperiment 
+dim: 1299686 216 
+metadata(8): time_created recount3_version ... annotation recount3_url
+assays(1): raw_counts
+rownames(1299686): GL000009.2|56140|58376|- GL000194.1|53594|54832|-
+  ... chrY|57213880|57213964|- chrY|57214350|57214397|-
+rowData names(21): source type ... ont ccdsid
+colnames(216): SRR5579425 SRR5579426 ... SRR5579421 SRR5579422
+colData names(168): rail_id external_id ... recount_seq_qc.errq
+  BigWigURL</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co">#looking at the metadata to find the description of the exon and where it is from and how to rse object was created</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(rse_exon_SRP107565)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1299686     216</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowRanges</span>(rse_exon_SRP107565)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>GRanges object with 1299686 ranges and 21 metadata columns:
+                               seqnames            ranges strand |   source
+                                  &lt;Rle&gt;         &lt;IRanges&gt;  &lt;Rle&gt; | &lt;factor&gt;
+    GL000009.2|56140|58376|- GL000009.2       56140-58376      - |  ENSEMBL
+    GL000194.1|53594|54832|- GL000194.1       53594-54832      - |  ENSEMBL
+    GL000194.1|55446|55676|- GL000194.1       55446-55676      - |  ENSEMBL
+    GL000194.1|53590|55676|- GL000194.1       53590-55676      - |  ENSEMBL
+  GL000194.1|112792|112850|- GL000194.1     112792-112850      - |  ENSEMBL
+                         ...        ...               ...    ... .      ...
+    chrY|57212184|57213125|-       chrY 57212184-57213125      - |   HAVANA
+    chrY|57213204|57213357|-       chrY 57213204-57213357      - |   HAVANA
+    chrY|57213526|57213602|-       chrY 57213526-57213602      - |   HAVANA
+    chrY|57213880|57213964|-       chrY 57213880-57213964      - |   HAVANA
+    chrY|57214350|57214397|-       chrY 57214350-57214397      - |   HAVANA
+                                 type bp_length     phase
+                             &lt;factor&gt; &lt;numeric&gt; &lt;integer&gt;
+    GL000009.2|56140|58376|-     exon      2237      &lt;NA&gt;
+    GL000194.1|53594|54832|-     exon      1239      &lt;NA&gt;
+    GL000194.1|55446|55676|-     exon       231      &lt;NA&gt;
+    GL000194.1|53590|55676|-     exon      2087      &lt;NA&gt;
+  GL000194.1|112792|112850|-     exon        59      &lt;NA&gt;
+                         ...      ...       ...       ...
+    chrY|57212184|57213125|-     exon       942      &lt;NA&gt;
+    chrY|57213204|57213357|-     exon       154      &lt;NA&gt;
+    chrY|57213526|57213602|-     exon        77      &lt;NA&gt;
+    chrY|57213880|57213964|-     exon        85      &lt;NA&gt;
+    chrY|57214350|57214397|-     exon        48      &lt;NA&gt;
+                                            gene_id          transcript_id
+                                        &lt;character&gt;            &lt;character&gt;
+    GL000009.2|56140|58376|-      ENSG00000278704.1      ENST00000618686.1
+    GL000194.1|53594|54832|-      ENSG00000274847.1      ENST00000400754.4
+    GL000194.1|55446|55676|-      ENSG00000274847.1      ENST00000400754.4
+    GL000194.1|53590|55676|-      ENSG00000277400.1      ENST00000613230.1
+  GL000194.1|112792|112850|-      ENSG00000274847.1      ENST00000400754.4
+                         ...                    ...                    ...
+    chrY|57212184|57213125|- ENSG00000227159.8_PA.. ENST00000507418.6_PA..
+    chrY|57213204|57213357|- ENSG00000227159.8_PA.. ENST00000507418.6_PA..
+    chrY|57213526|57213602|- ENSG00000227159.8_PA.. ENST00000507418.6_PA..
+    chrY|57213880|57213964|- ENSG00000227159.8_PA.. ENST00000507418.6_PA..
+    chrY|57214350|57214397|- ENSG00000227159.8_PA.. ENST00000507418.6_PA..
+                                          gene_type   gene_name
+                                        &lt;character&gt; &lt;character&gt;
+    GL000009.2|56140|58376|-         protein_coding  BX004987.1
+    GL000194.1|53594|54832|-         protein_coding  AC145212.1
+    GL000194.1|55446|55676|-         protein_coding  AC145212.1
+    GL000194.1|53590|55676|-         protein_coding  AC145212.2
+  GL000194.1|112792|112850|-         protein_coding  AC145212.1
+                         ...                    ...         ...
+    chrY|57212184|57213125|- unprocessed_pseudogene    DDX11L16
+    chrY|57213204|57213357|- unprocessed_pseudogene    DDX11L16
+    chrY|57213526|57213602|- unprocessed_pseudogene    DDX11L16
+    chrY|57213880|57213964|- unprocessed_pseudogene    DDX11L16
+    chrY|57214350|57214397|- unprocessed_pseudogene    DDX11L16
+                                    transcript_type transcript_name exon_number
+                                        &lt;character&gt;     &lt;character&gt; &lt;character&gt;
+    GL000009.2|56140|58376|-         protein_coding  BX004987.1-201           1
+    GL000194.1|53594|54832|-         protein_coding  AC145212.1-201           4
+    GL000194.1|55446|55676|-         protein_coding  AC145212.1-201           3
+    GL000194.1|53590|55676|-         protein_coding  AC145212.2-201           3
+  GL000194.1|112792|112850|-         protein_coding  AC145212.1-201           2
+                         ...                    ...             ...         ...
+    chrY|57212184|57213125|- unprocessed_pseudogene    DDX11L16-001           5
+    chrY|57213204|57213357|- unprocessed_pseudogene    DDX11L16-001           4
+    chrY|57213526|57213602|- unprocessed_pseudogene    DDX11L16-001           3
+    chrY|57213880|57213964|- unprocessed_pseudogene    DDX11L16-001           2
+    chrY|57214350|57214397|- unprocessed_pseudogene    DDX11L16-001           1
+                                       exon_id       level        protein_id
+                                   &lt;character&gt; &lt;character&gt;       &lt;character&gt;
+    GL000009.2|56140|58376|- ENSE00003753029.1           3 ENSP00000484918.1
+    GL000194.1|53594|54832|- ENSE00002218789.2           3 ENSP00000478910.1
+    GL000194.1|55446|55676|- ENSE00003714436.1           3 ENSP00000478910.1
+    GL000194.1|53590|55676|- ENSE00003723764.1           3 ENSP00000483280.1
+  GL000194.1|112792|112850|- ENSE00003713687.1           3 ENSP00000478910.1
+                         ...               ...         ...               ...
+    chrY|57212184|57213125|- ENSE00002023900.1           2              &lt;NA&gt;
+    chrY|57213204|57213357|- ENSE00002036959.1           2              &lt;NA&gt;
+    chrY|57213526|57213602|- ENSE00002021169.1           2              &lt;NA&gt;
+    chrY|57213880|57213964|- ENSE00002046926.1           2              &lt;NA&gt;
+    chrY|57214350|57214397|- ENSE00002072208.1           2              &lt;NA&gt;
+                             transcript_support_level         tag
+                                          &lt;character&gt; &lt;character&gt;
+    GL000009.2|56140|58376|-                       NA       basic
+    GL000194.1|53594|54832|-                        1       basic
+    GL000194.1|55446|55676|-                        1       basic
+    GL000194.1|53590|55676|-                        1       basic
+  GL000194.1|112792|112850|-                        1       basic
+                         ...                      ...         ...
+    chrY|57212184|57213125|-                       NA         PAR
+    chrY|57213204|57213357|-                       NA         PAR
+    chrY|57213526|57213602|-                       NA         PAR
+    chrY|57213880|57213964|-                       NA         PAR
+    chrY|57214350|57214397|-                       NA         PAR
+                                    recount_exon_id          havana_gene
+                                        &lt;character&gt;          &lt;character&gt;
+    GL000009.2|56140|58376|- GL000009.2|56140|583..                 &lt;NA&gt;
+    GL000194.1|53594|54832|- GL000194.1|53594|548..                 &lt;NA&gt;
+    GL000194.1|55446|55676|- GL000194.1|55446|556..                 &lt;NA&gt;
+    GL000194.1|53590|55676|- GL000194.1|53590|556..                 &lt;NA&gt;
+  GL000194.1|112792|112850|- GL000194.1|112792|11..                 &lt;NA&gt;
+                         ...                    ...                  ...
+    chrY|57212184|57213125|- chrY|57212184|572131.. OTTHUMG00000022678.1
+    chrY|57213204|57213357|- chrY|57213204|572133.. OTTHUMG00000022678.1
+    chrY|57213526|57213602|- chrY|57213526|572136.. OTTHUMG00000022678.1
+    chrY|57213880|57213964|- chrY|57213880|572139.. OTTHUMG00000022678.1
+    chrY|57214350|57214397|- chrY|57214350|572143.. OTTHUMG00000022678.1
+                                havana_transcript         ont      ccdsid
+                                      &lt;character&gt; &lt;character&gt; &lt;character&gt;
+    GL000009.2|56140|58376|-                 &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;
+    GL000194.1|53594|54832|-                 &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;
+    GL000194.1|55446|55676|-                 &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;
+    GL000194.1|53590|55676|-                 &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;
+  GL000194.1|112792|112850|-                 &lt;NA&gt;        &lt;NA&gt;        &lt;NA&gt;
+                         ...                  ...         ...         ...
+    chrY|57212184|57213125|- OTTHUMT00000058841.1 PGO:0000005        &lt;NA&gt;
+    chrY|57213204|57213357|- OTTHUMT00000058841.1 PGO:0000005        &lt;NA&gt;
+    chrY|57213526|57213602|- OTTHUMT00000058841.1 PGO:0000005        &lt;NA&gt;
+    chrY|57213880|57213964|- OTTHUMT00000058841.1 PGO:0000005        &lt;NA&gt;
+    chrY|57214350|57214397|- OTTHUMT00000058841.1 PGO:0000005        &lt;NA&gt;
   -------
   seqinfo: 374 sequences from an unspecified genome; no seqlengths</code></pre>
 </div>

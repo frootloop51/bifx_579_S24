@@ -1,10 +1,14 @@
 ---
-title: "Finding Novel Exons by Princess Kuteyi"
+title: "Tool 1B Novel Exon Workflow"
+author: "Princess Kuteyi"
+Purpose: "Finding possible novel exons"
+Link to script: https://www.bioconductor.org/packages/devel/bioc/vignettes/recount3/inst/doc/recount3-quickstart.html#410_Exon-exon_junctions
+last modified: Mar 27, 2024
 format: html
 editor: visual
 ---
 
-## Finding Novel Exons
+## ~Finding Novel Exons~
 
 The beginning portion of this script is to load the packages needed and also loading the data for the analysis.
 
@@ -16,7 +20,7 @@ library(DESeq2)
 
 ```
 
-## Downloading BiocManager and Recount3
+## ^Downloading BiocManager and Recount3^
 
 Using Bioconductor and Recount3 is essential for this project so the first step is to download them.
 
@@ -26,6 +30,7 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install("recount3")
 BiocManager::install("snapcount")
 BiocManager::install("Repitools")
+BiocManager::install("GenomeInfoDb")
 library("recount3")
 library("snapcount")
 ```
@@ -33,9 +38,9 @@ library("snapcount")
 Find available projects to utilize. The focus is human samples.
 
 ```{r}
-human_projects <- available_projects()
-dim(human_projects)
-head(human_projects)
+projects <- available_projects()
+dim(projects)
+head(projects)
 ```
 
 Pick the project and sample to analyze.
@@ -43,7 +48,7 @@ Pick the project and sample to analyze.
 ```{r}
 # subset the project of interest
  potential_info <- subset(
- human_projects,
+ projects,
    project == "SRP107565" & project_type == "data_sources"
 )
  
@@ -53,10 +58,11 @@ potential_info
 
 ```{r}
 # utilize gtext as the file source
-subset(human_projects, file_source == "gtex" & project_type == "data_sources")
+subset(projects, file_source == "gtex" & project_type == "data_sources")
 ```
 
 ```{r}
+#looking at the metadata to find the description of the gene and where it is from and how to rse object was created
 rse_gene_SRP107565 <- create_rse(potential_info)
 rse_gene_SRP107565
 metadata(rse_gene_SRP107565)
@@ -64,6 +70,30 @@ metadata(rse_gene_SRP107565)
 ```
 
 ```{r}
+#dim function provides the number of genes by the number of samples
 dim(rse_gene_SRP107565)
+#row ranges shows the range of the gene along with the chromosome locations
 rowRanges(rse_gene_SRP107565)
+```
+
+In order to get more in depth information on the gene, these next steps will expand the information and attributes of the gene and also provided the URL for the big wig files.
+
+```{r}
+rse_gene_human_expanded <- expand_sra_attributes(rse_gene_SRP107565)
+colData(rse_gene_human_expanded)[, ncol(colData(rse_gene_SRP107565)):ncol(colData(rse_gene_human_expanded))]
+```
+
+```{r}
+# creating the rse data for the exons. 
+rse_exon_SRP107565 <- create_rse(
+    potential_info,
+    type = "exon"
+)
+rse_exon_SRP107565
+```
+
+```{r}
+#looking at the metadata to find the description of the exon and where it is from and how to rse object was created
+dim(rse_exon_SRP107565)
+rowRanges(rse_exon_SRP107565)
 ```
